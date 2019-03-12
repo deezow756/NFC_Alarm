@@ -11,3 +11,16 @@ C:\Users\40340713\Desktop\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\Se
 C:\Users\40340713\Desktop\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\40340713\Desktop\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.dll
 C:\Users\40340713\Desktop\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.pdb
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\bin\Debug\netstandard2.0\NFCAlarm.deps.json
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\bin\Debug\netstandard2.0\NFCAlarm.dll
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\bin\Debug\netstandard2.0\NFCAlarm.pdb
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.csprojAssemblyReference.cache
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\SetUpAlarm.xaml.g.cs
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.csproj.CoreCompileInputs.cache
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.AssemblyInfoInputs.cache
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.AssemblyInfo.cs
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.dll
+C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.pdb

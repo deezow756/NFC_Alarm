@@ -398,11 +398,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
+      "projectUniqueName": "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
       "projectName": "NFCAlarm",
-      "projectPath": "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
+      "projectPath": "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
       "packagesPath": "C:\\Users\\40340713\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm\\obj\\",
+      "outputPath": "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

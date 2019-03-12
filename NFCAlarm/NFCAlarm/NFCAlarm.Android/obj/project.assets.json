@@ -849,11 +849,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\NFCAlarm.Android.csproj",
+      "projectUniqueName": "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\NFCAlarm.Android.csproj",
       "projectName": "NFCAlarm.Android",
-      "projectPath": "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\NFCAlarm.Android.csproj",
+      "projectPath": "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\NFCAlarm.Android.csproj",
       "packagesPath": "C:\\Users\\40340713\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\obj\\",
+      "outputPath": "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -870,8 +870,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj": {
-              "projectPath": "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj"
+            "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj": {
+              "projectPath": "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj"
             }
           }
         }

@@ -798,11 +798,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
       "projectName": "NFCAlarm.iOS",
-      "projectPath": "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
+      "projectPath": "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
       "packagesPath": "C:\\Users\\40340713\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\obj\\",
+      "outputPath": "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -819,8 +819,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj": {
-              "projectPath": "C:\\Users\\40340713\\Desktop\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj"
+            "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj": {
+              "projectPath": "C:\\Users\\40340713\\Documents\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj"
             }
           }
         }
