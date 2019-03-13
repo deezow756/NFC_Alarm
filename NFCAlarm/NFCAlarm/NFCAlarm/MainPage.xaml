@@ -4,15 +4,35 @@
              xmlns:local="clr-namespace:NFCAlarm"
              x:Class="NFCAlarm.MainPage">
 
-    <StackLayout HorizontalOptions="CenterAndExpand">
-        <Label x:Name="txtTime" Text="" FontSize="100" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
-        <ListView x:Name="alarmsList">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ImageCell Tapped="ImageCell_Tapped" ImageSource="{Binding ImageName}" Text="{Binding Name}" Detail="{Binding Time}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+    <StackLayout>
+        <Label x:Name="txtTime" Text="" FontSize="70" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+        <StackLayout Orientation="Horizontal">            
+            <ListView x:Name="alarmsButtonList" RowHeight="80" WidthRequest="100" HorizontalOptions="StartAndExpand" SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <ImageButton Source="{Binding ImageName}" BackgroundColor="Transparent" Clicked="ImageButton_Clicked" ClassId="{Binding ClassID}" HeightRequest="80" WidthRequest="80" MinimumWidthRequest="80" MinimumHeightRequest="80"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="alarmsTextList" RowHeight="80" SeparatorVisibility="Default" ItemSelected="AlarmsTextList_ItemSelected" HorizontalOptions="End">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Tapped="ImageCell_Tapped" Text="{Binding Name}" Detail="{Binding Time}"/>-->
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Spacing="30">
+                                <Label Text="{Binding Name}" FontSize="30" VerticalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding Time}" FontSize="30" VerticalOptions="CenterAndExpand"/>
+                                <ImageButton Source="settings.png" Clicked="ImageCell_Tapped" ClassId="{Binding ClassID}" HeightRequest="80" WidthRequest="80" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

@@ -18,14 +18,16 @@ namespace NFCAlarm
             alarms = fileManager.GetAlarms();
             if(alarms != null)
             {
-                alarmsList.ItemsSource = alarms.ToList();
+                alarmsButtonList.ItemsSource = alarms.ToList();
+                alarmsTextList.ItemsSource = alarms.ToList();
             }
             else
             {
                 alarms = new Alarm[1];
                 alarms[0] = new Alarm(){ Name = "Test", Status = false, TimeDate = DateTime.Now };
                 fileManager.SaveAlarms(alarms);
-                alarmsList.ItemsSource = alarms.ToList();
+                alarmsButtonList.ItemsSource = alarms.ToList();
+                alarmsTextList.ItemsSource = alarms.ToList();
             }
             SetTime();
         }
@@ -43,15 +45,15 @@ namespace NFCAlarm
 
         private void ImageCell_Tapped(object sender, EventArgs e)
         {
-            var ic = ((ImageCell)sender);
+            var btn = ((ImageButton)sender);
 
-            alarmsList.SelectedItem = null;
+            alarmsTextList.SelectedItem = null;
 
             Alarm alarm = null;
 
             for (int i = 0; i < alarms.Length; i++)
             {
-                if(alarms[i].Name == ic.Text)
+                if(alarms[i].ClassID == btn.ClassId)
                 {
                     alarm = alarms[i];
                 }
@@ -59,6 +61,30 @@ namespace NFCAlarm
 
             if(alarm != null)
                 Navigation.PushAsync(new SetUpAlarm(alarm));
+        }
+
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            var btn = ((ImageButton)sender);
+
+            alarmsButtonList.SelectedItem = null;
+
+            for (int i = 0; i < alarms.Length; i++)
+            {
+                if (alarms[i].ClassID == btn.ClassId)
+                {
+                    alarms[i].Toggle();
+                    btn.Source = alarms[i].ImageName;
+                    btn.HeightRequest = 80;
+                    btn.WidthRequest = 80;
+                    break;
+                }
+            }
+        }
+
+        private void AlarmsTextList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            alarmsTextList.SelectedItem = null;
         }
     }
 }

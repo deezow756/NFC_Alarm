@@ -35,5 +35,25 @@ namespace NFCAlarm
                 return TimeDate.Hour.ToString() + ":" + TimeDate.Minute.ToString();
             }
         }
+
+        public string ClassID
+        {
+            get
+            {
+                return Name + Time;
+            }
+        }
+
+        public void Toggle()
+        {
+            if(Status)
+            {
+                Status = false;
+            }
+            else
+            {
+                Status = true;
+            }
+        }
     }
 }
