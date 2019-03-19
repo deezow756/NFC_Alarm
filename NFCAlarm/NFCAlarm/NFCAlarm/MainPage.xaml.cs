@@ -23,7 +23,7 @@ namespace NFCAlarm
             else
             {
                 alarms = new Alarm[1];
-                alarms[0] = new Alarm();
+                alarms[0] = new Alarm() { Name = "Test" };
                 fileManager.SaveAlarms(alarms);
                 //alarmsButtonList.ItemsSource = alarms.ToList();
                 alarmsTextList.ItemsSource = alarms.ToList();
@@ -96,8 +96,9 @@ namespace NFCAlarm
                 {
                     alarms[i].Toggle();
                     btn.Source = alarms[i].ImageName;
-                    btn.HeightRequest = 80;
-                    btn.WidthRequest = 80;
+                    if()
+                    btn.HeightRequest = 120;
+                    btn.WidthRequest = 120;
                     break;
                 }
             }

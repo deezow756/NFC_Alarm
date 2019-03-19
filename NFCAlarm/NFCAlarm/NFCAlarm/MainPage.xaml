@@ -12,11 +12,11 @@
                     <DataTemplate>
                         <ViewCell Tapped="ImageCell_Tapped" ClassId="{Binding ClassID}">
                             <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="{Binding Name}" FontSize="30" VerticalOptions="CenterAndExpand"/>
-                                    <Label Text="{Binding Time}" FontSize="25" VerticalOptions="CenterAndExpand"/>
+                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Binding Name}" FontSize="30" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                                    <Label Text="{Binding Time}" FontSize="25" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
                                 </StackLayout>
-                                <ImageButton Source="{Binding ImageName}" BackgroundColor="Transparent" Clicked="ImageButton_Clicked" ClassId="{Binding ClassID}" HeightRequest="100" WidthRequest="100" MinimumWidthRequest="100" MinimumHeightRequest="100" VerticalOptions="Start"/>
+                                <ImageButton Source="{Binding ImageName}" BackgroundColor="Transparent" Clicked="ImageButton_Clicked" ClassId="{Binding ClassID}" HeightRequest="130" WidthRequest="130" MinimumWidthRequest="120" MinimumHeightRequest="120" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

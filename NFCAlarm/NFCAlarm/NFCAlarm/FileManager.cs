@@ -8,7 +8,7 @@ namespace NFCAlarm
 {
     public class FileManager
     {
-        private string alarmsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Alarm.json");
+        private string alarmsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Alarms.json");
 
         public Alarm[] GetAlarms()
         {

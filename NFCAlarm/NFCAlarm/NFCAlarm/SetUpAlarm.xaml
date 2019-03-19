@@ -3,65 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NFCAlarm.SetUpAlarm">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-            <TimePicker x:Name="pickerTime" Format="t" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
-            <DatePicker x:Name="pickerDate" Format="d" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                <Button x:Name="btnMonday" Text="M" ClassId="Mon" Clicked="BtnMonday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"/>
-                <Button x:Name="btnTuesday" Text="T" ClassId="Tue" Clicked="BtnTuesday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"/>
-                <Button x:Name="btnWednesday" Text="W" ClassId="Wed" Clicked="BtnWednesday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"/>
-                <Button x:Name="btnThursday" Text="T" ClassId="Thu" Clicked="BtnThursday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"/>
-                <Button x:Name="btnFriday" Text="F" ClassId="Fri" Clicked="BtnFriday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"/>
-                <Button x:Name="btnSaturday" Text="S" ClassId="Sat" Clicked="BtnSaturday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"/>
-                <Button x:Name="btnSunday" Text="S" ClassId="Sun" Clicked="BtnSunday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"/>
-            </StackLayout>
+        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+            <TimePicker x:Name="pickerTime" Format="t" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Scale="1.5"/>
+            <DatePicker x:Name="pickerDate" Format="d" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Scale="1.5"/>
+            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Button x:Name="btnMonday" Text="M" ClassId="Mon" Clicked="BtnMonday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50"/>
+                <Button x:Name="btnTuesday" Text="T" ClassId="Tue" Clicked="BtnTuesday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50"/>
+                <Button x:Name="btnWednesday" Text="W" ClassId="Wed" Clicked="BtnWednesday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50"/>
+                <Button x:Name="btnThursday" Text="T" ClassId="Thu" Clicked="BtnThursday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50"/>
+                <Button x:Name="btnFriday" Text="F" ClassId="Fri" Clicked="BtnFriday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50"/>
+                <Button x:Name="btnSaturday" Text="S" ClassId="Sat" Clicked="BtnSaturday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50"/>
+                <Button x:Name="btnSunday" Text="S" ClassId="Sun" Clicked="BtnSunday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50"/>
+            </StackLayout>-->
             <Entry x:Name="txtName" Placeholder="Alarm Name" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" FontSize="30" VerticalOptions="CenterAndExpand"/>
-            <ListView x:Name="listAlarmVibrate" RowHeight="100" HeightRequest="100" MinimumHeightRequest="100" HasUnevenRows="True" VerticalOptions="Start">
+            <ListView x:Name="listAlarmVibrate" RowHeight="100" HasUnevenRows="False" HorizontalOptions="CenterAndExpand" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell x:Name="vibrateTrigger" Tapped="VibrateTrigger_Tapped">
+                        <ViewCell ClassId="{Binding ClassID}" x:Name="vibrateTrigger" Tapped="VibrateTrigger_Tapped">
                             <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="Vibrate" FontSize="Large"/>
+                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                    <Label Text="Vibrate" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
                                     <!--will have a type of vibrate but yet to implement-->
-                                    <Label Text="Simple" FontSize="Medium"/>
+                                    <Label Text="Simple" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
                                 </StackLayout>
-                                <ImageButton Source="{Binding VibrateImageName}" BackgroundColor="Transparent" VerticalOptions="Start" HeightRequest="100" WidthRequest="100" MinimumHeightRequest="100" MinimumWidthRequest="100"/>
+                                <ImageButton Clicked="VibrateToggle_Clicked" Source="{Binding VibrateImageName}" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="120" WidthRequest="120" MinimumHeightRequest="120" MinimumWidthRequest="120"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <ListView x:Name="listAlarmSound" RowHeight="100" HeightRequest="100" MinimumHeightRequest="100" HasUnevenRows="True" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <ListView x:Name="listAlarmSound" RowHeight="100" HasUnevenRows="False" HorizontalOptions="CenterAndExpand" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell ClassId="{Binding ClassID}" x:Name="soundTrigger" Tapped="SoundTrigger_Tapped">
                             <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="Alarm Sound" FontSize="Large"/>
-                                    <Label Text="{Binding SoundName}" FontSize="Medium"/>
+                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                    <Label Text="Alarm Sound" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                                    <Label Text="{Binding SoundName}" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
                                 </StackLayout>
-                                <ImageButton Source="{Binding SoundImageName}" BackgroundColor="Transparent" VerticalOptions="Start" HeightRequest="100" WidthRequest="100" MinimumHeightRequest="100" MinimumWidthRequest="100"/>
+                                <ImageButton Clicked="SoundToggle_Clicked" Source="{Binding SoundImageName}" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="120" WidthRequest="120" MinimumHeightRequest="120" MinimumWidthRequest="120"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <ListView x:Name="listAlarmSnooze" RowHeight="100" HeightRequest="100" MinimumHeightRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <ListView x:Name="listAlarmSnooze" RowHeight="100" HasUnevenRows="False" HorizontalOptions="CenterAndExpand" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell ClassId="{Binding ClassID}" x:Name="snoozeTrigger" Tapped="SnoozeTrigger_Tapped">
                             <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="Snooze" FontSize="Large"/>
-                                    <Label Text="{Binding SnoozeName}" FontSize="Medium"/>
+                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                    <Label Text="Snooze" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                                    <Label Text="{Binding SnoozeName}" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
                                 </StackLayout>
-                                <ImageButton Source="{Binding SnoozeImageName}" BackgroundColor="Transparent" VerticalOptions="Start" HeightRequest="100" WidthRequest="100" MinimumHeightRequest="100" MinimumWidthRequest="100"/>
+                                <ImageButton Clicked="SnoozeToggle_Clicked" Source="{Binding SnoozeImageName}" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="120" WidthRequest="120" MinimumHeightRequest="120" MinimumWidthRequest="120"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button x:Name="btnSave" Clicked="BtnSave_Clicked" Text="Save" FontSize="Large" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
