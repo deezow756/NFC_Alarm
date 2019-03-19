@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "e0f1b7b2754280165ab5e140268c5abe82f4061f"
+    "signature": "9fa484f17ed792918b058e0f960510d8d6561a33"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,7 +11,7 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "4.0.0.169046-pre5"
+          "Xamarin.Forms": "3.6.0.220655"
         },
         "runtime": {
           "NFCAlarm.dll": {}
@@ -31,7 +31,7 @@
           }
         }
       },
-      "Xamarin.Forms/4.0.0.169046-pre5": {
+      "Xamarin.Forms/3.6.0.220655": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -76,12 +76,12 @@
       "path": "newtonsoft.json/12.0.1",
       "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
     },
-    "Xamarin.Forms/4.0.0.169046-pre5": {
+    "Xamarin.Forms/3.6.0.220655": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GN47nyQX4kGU5wG9UcPfb6o21koVqcUMS+r170YAVwXtW12oIbhUosVlfUM8pT94MoYur1LMzuBSeG7XOYVB4A==",
-      "path": "xamarin.forms/4.0.0.169046-pre5",
-      "hashPath": "xamarin.forms.4.0.0.169046-pre5.nupkg.sha512"
+      "sha512": "sha512-vpPeq+GpNGj9uAyHjzeaPtPPAHxajanj2ct7ZqQ1RXGUlthi/yK5nnmyv9L/IGQ3fzgU28PBID7yQL13P3bGig==",
+      "path": "xamarin.forms/3.6.0.220655",
+      "hashPath": "xamarin.forms.3.6.0.220655.nupkg.sha512"
     }
   }
 }

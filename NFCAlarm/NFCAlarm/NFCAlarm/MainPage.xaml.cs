@@ -17,27 +17,48 @@ namespace NFCAlarm
             FileManager fileManager = new FileManager();
             alarms = fileManager.GetAlarms();
             if(alarms != null)
-            {
-                alarmsButtonList.ItemsSource = alarms.ToList();
+            { 
                 alarmsTextList.ItemsSource = alarms.ToList();
             }
             else
             {
                 alarms = new Alarm[1];
-                alarms[0] = new Alarm(){ Name = "Test", Status = false, TimeDate = DateTime.Now };
+                alarms[0] = new Alarm(){ Name = "Test", TimeDate = DateTime.Now };
                 fileManager.SaveAlarms(alarms);
-                alarmsButtonList.ItemsSource = alarms.ToList();
+                //alarmsButtonList.ItemsSource = alarms.ToList();
                 alarmsTextList.ItemsSource = alarms.ToList();
             }
             SetTime();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            SetTime();
+        }
+
         async void SetTime()
         {
+            string mins = "";
+            string hours = "";
             DateTime time = DateTime.Now;
+
+            if (time.Hour.ToString().Length == 1)
+            {
+                hours = "0" + time.Hour.ToString();
+            }
+            else
+                hours = time.Hour.ToString();
+            if (time.Minute.ToString().Length == 1)
+            {
+                mins = "0" + time.Minute.ToString();
+            }
+            else
+                mins = time.Minute.ToString();
+
             Device.BeginInvokeOnMainThread(() =>
             {
-                txtTime.Text = time.Hour.ToString() + ":" + time.Minute.ToString();
+                txtTime.Text = hours + ":" + mins;
             });
             await Task.Delay(1000);
             SetTime();
@@ -45,7 +66,7 @@ namespace NFCAlarm
 
         private void ImageCell_Tapped(object sender, EventArgs e)
         {
-            var btn = ((ImageButton)sender);
+            var vc = ((ViewCell)sender);
 
             alarmsTextList.SelectedItem = null;
 
@@ -53,7 +74,7 @@ namespace NFCAlarm
 
             for (int i = 0; i < alarms.Length; i++)
             {
-                if(alarms[i].ClassID == btn.ClassId)
+                if(alarms[i].ClassID == vc.ClassId)
                 {
                     alarm = alarms[i];
                 }
@@ -67,7 +88,7 @@ namespace NFCAlarm
         {
             var btn = ((ImageButton)sender);
 
-            alarmsButtonList.SelectedItem = null;
+            //alarmsButtonList.SelectedItem = null;
 
             for (int i = 0; i < alarms.Length; i++)
             {

@@ -508,7 +508,6 @@ namespace NFCAlarm.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_normal_material_light = global::NFCAlarm.Droid.Resource.Color.switch_thumb_normal_material_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_dark = global::NFCAlarm.Droid.Resource.Color.tooltip_background_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_light = global::NFCAlarm.Droid.Resource.Color.tooltip_background_light;
-			global::Xamarin.Forms.Platform.Android.Resource.Color.white_disabled_material = global::NFCAlarm.Droid.Resource.Color.white_disabled_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_content_inset_material = global::NFCAlarm.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::NFCAlarm.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_default_height_material = global::NFCAlarm.Droid.Resource.Dimension.abc_action_bar_default_height_material;
@@ -758,8 +757,6 @@ namespace NFCAlarm.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_ic_visibility_off = global::NFCAlarm.Droid.Resource.Drawable.design_ic_visibility_off;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_password_eye = global::NFCAlarm.Droid.Resource.Drawable.design_password_eye;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_snackbar_background = global::NFCAlarm.Droid.Resource.Drawable.design_snackbar_background;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.MaterialActivityIndicatorBackground = global::NFCAlarm.Droid.Resource.Drawable.MaterialActivityIndicatorBackground;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.MaterialProgressBar = global::NFCAlarm.Droid.Resource.Drawable.MaterialProgressBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.navigation_empty_icon = global::NFCAlarm.Droid.Resource.Drawable.navigation_empty_icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_action_background = global::NFCAlarm.Droid.Resource.Drawable.notification_action_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg = global::NFCAlarm.Droid.Resource.Drawable.notification_bg;
@@ -3529,9 +3526,6 @@ namespace NFCAlarm.Droid
 			// aapt resource value: 0x7F06005F
 			public const int tooltip_background_light = 2131099743;
 			
-			// aapt resource value: 0x7F050105
-			public const int white_disabled_material = 2131034373;
-			
 			static Color()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -4305,9 +4299,6 @@ namespace NFCAlarm.Droid
 			// aapt resource value: 0x7F090055
 			public const int avd_show_password = 2131296341;
 			
-			// aapt resource value: 0x7F010002
-			public const int baseline_settings_black_48dp = 2130771970;
-			
 			// aapt resource value: 0x7F090056
 			public const int design_bottom_navigation_item_background = 2131296342;
 			
@@ -4857,12 +4848,6 @@ namespace NFCAlarm.Droid
 			// aapt resource value: 0x7F090104
 			public const int ic_vol_type_tv_light = 2131296516;
 			
-			// aapt resource value: 0x7F010308
-			public const int MaterialActivityIndicatorBackground = 2130772744;
-			
-			// aapt resource value: 0x7F010309
-			public const int MaterialProgressBar = 2130772745;
-			
 			// aapt resource value: 0x7F090105
 			public const int mr_button_connected_dark = 2131296517;
 			
@@ -4961,6 +4946,9 @@ namespace NFCAlarm.Droid
 			
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
+			
+			// aapt resource value: 0x7F010002
+			public const int settings = 2130771970;
 			
 			// aapt resource value: 0x7F010003
 			public const int toggle_off = 2130771971;

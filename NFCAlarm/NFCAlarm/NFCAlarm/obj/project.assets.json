@@ -35,7 +35,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Xamarin.Forms/4.0.0.169046-pre5": {
+      "Xamarin.Forms/3.6.0.220655": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
@@ -237,13 +237,14 @@
         "newtonsoft.json.nuspec"
       ]
     },
-    "Xamarin.Forms/4.0.0.169046-pre5": {
-      "sha512": "GN47nyQX4kGU5wG9UcPfb6o21koVqcUMS+r170YAVwXtW12oIbhUosVlfUM8pT94MoYur1LMzuBSeG7XOYVB4A==",
+    "Xamarin.Forms/3.6.0.220655": {
+      "sha512": "vpPeq+GpNGj9uAyHjzeaPtPPAHxajanj2ct7ZqQ1RXGUlthi/yK5nnmyv9L/IGQ3fzgU28PBID7yQL13P3bGig==",
       "type": "package",
-      "path": "xamarin.forms/4.0.0.169046-pre5",
+      "path": "xamarin.forms/3.6.0.220655",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "build/MonoAndroid10/proguard.cfg",
         "build/Xamarin.Forms.DefaultItems.props",
         "build/Xamarin.Forms.DefaultItems.targets",
         "build/Xamarin.Forms.props",
@@ -397,7 +398,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.0.0.169046-pre5.nupkg.sha512",
+        "xamarin.forms.3.6.0.220655.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     }
@@ -406,7 +407,7 @@
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.1",
-      "Xamarin.Forms >= 4.0.0.169046-pre5"
+      "Xamarin.Forms >= 3.6.0.220655"
     ]
   },
   "packageFolders": {
@@ -462,7 +463,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.0.0.169046-pre5, )"
+            "version": "[3.6.0.220655, )"
           }
         },
         "imports": [

@@ -27,6 +27,7 @@ C:\Users\40340713\Documents\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netst
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\bin\Debug\netstandard2.0\NFCAlarm.deps.json
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\bin\Debug\netstandard2.0\NFCAlarm.dll
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\bin\Debug\netstandard2.0\NFCAlarm.pdb
+C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.csprojAssemblyReference.cache
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\SetUpAlarm.xaml.g.cs
@@ -36,4 +37,3 @@ C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\n
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.dll
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.pdb
-C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.csprojAssemblyReference.cache
