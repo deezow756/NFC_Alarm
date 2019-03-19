@@ -322,7 +322,7 @@
           "build/monoandroid81/Xamarin.Android.Support.Vector.Drawable.targets": {}
         }
       },
-      "Xamarin.Forms/3.6.0.220655": {
+      "Xamarin.Forms/4.0.0.232914-pre6": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Support.Design": "27.0.2",
@@ -355,7 +355,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "3.6.0.220655"
+          "Xamarin.Forms": "4.0.0.232914-pre6"
         },
         "compile": {
           "bin/placeholder/NFCAlarm.dll": {}
@@ -827,10 +827,10 @@
         "xamarin.android.support.vector.drawable.nuspec"
       ]
     },
-    "Xamarin.Forms/3.6.0.220655": {
-      "sha512": "ltCTV5Tez9zTbg9f6UunegHPWRzfVHKGHeLOmXeJvNFEPwXrHDwjCcRqMqNISLRjzWxT1MuC9wgKdMoxGdBLqQ==",
+    "Xamarin.Forms/4.0.0.232914-pre6": {
+      "sha512": "IehBiIKvFMFl5MHUjZmleBn6zLSR+D65cL3n/UDZWf4BiPWqIHBijN9JAFI/htfUZKDMGqjqZTzXsg1SOw7xYQ==",
       "type": "package",
-      "path": "xamarin.forms/3.6.0.220655",
+      "path": "xamarin.forms/4.0.0.232914-pre6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -988,7 +988,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.6.0.220655.nupkg.sha512",
+        "xamarin.forms.4.0.0.232914-pre6.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -1007,7 +1007,7 @@
       "Xamarin.Android.Support.v7.AppCompat >= 28.0.0.1",
       "Xamarin.Android.Support.v7.CardView >= 28.0.0.1",
       "Xamarin.Android.Support.v7.MediaRouter >= 28.0.0.1",
-      "Xamarin.Forms >= 3.6.0.220655"
+      "Xamarin.Forms >= 4.0.0.232914-pre6"
     ]
   },
   "packageFolders": {
@@ -1016,11 +1016,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\NFCAlarm.Android.csproj",
+      "projectUniqueName": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\NFCAlarm.Android.csproj",
       "projectName": "NFCAlarm.Android",
-      "projectPath": "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\NFCAlarm.Android.csproj",
+      "projectPath": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\NFCAlarm.Android.csproj",
       "packagesPath": "C:\\Users\\40340713\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\obj\\",
+      "outputPath": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -1037,8 +1037,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj": {
-              "projectPath": "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj"
+            "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj": {
+              "projectPath": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj"
             }
           }
         }
@@ -1073,7 +1073,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.6.0.220655, )"
+            "version": "[4.0.0.232914-pre6, )"
           }
         }
       }

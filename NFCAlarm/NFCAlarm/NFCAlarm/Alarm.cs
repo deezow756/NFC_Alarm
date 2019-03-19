@@ -10,15 +10,8 @@ namespace NFCAlarm
         public string Name { get; set; }
         public DateTime TimeDate { get; set; }
         public bool SoundStatus { get; set; }
-        public string SoundName
-        {
-            get
-            {
-                if(SoundName == "") { return "No Sound Selected Yet"; }
-                else { return SoundName; }
-            }
-            set { SoundName = value; }
-        }
+        public string SoundPath { get; set; }
+        public string SoundName { get; set; }
         public bool Vibrate { get; set; }
         public bool SnoozeStatus { get; set; }
         public int SnoozeTime { get; set; }

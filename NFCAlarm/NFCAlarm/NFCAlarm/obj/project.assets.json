@@ -35,7 +35,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Xamarin.Forms/3.6.0.220655": {
+      "Xamarin.Forms/4.0.0.232914-pre6": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
@@ -237,10 +237,10 @@
         "newtonsoft.json.nuspec"
       ]
     },
-    "Xamarin.Forms/3.6.0.220655": {
-      "sha512": "ltCTV5Tez9zTbg9f6UunegHPWRzfVHKGHeLOmXeJvNFEPwXrHDwjCcRqMqNISLRjzWxT1MuC9wgKdMoxGdBLqQ==",
+    "Xamarin.Forms/4.0.0.232914-pre6": {
+      "sha512": "IehBiIKvFMFl5MHUjZmleBn6zLSR+D65cL3n/UDZWf4BiPWqIHBijN9JAFI/htfUZKDMGqjqZTzXsg1SOw7xYQ==",
       "type": "package",
-      "path": "xamarin.forms/3.6.0.220655",
+      "path": "xamarin.forms/4.0.0.232914-pre6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -398,7 +398,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.6.0.220655.nupkg.sha512",
+        "xamarin.forms.4.0.0.232914-pre6.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     }
@@ -407,7 +407,7 @@
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.1",
-      "Xamarin.Forms >= 3.6.0.220655"
+      "Xamarin.Forms >= 4.0.0.232914-pre6"
     ]
   },
   "packageFolders": {
@@ -417,11 +417,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
+      "projectUniqueName": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
       "projectName": "NFCAlarm",
-      "projectPath": "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
+      "projectPath": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
       "packagesPath": "C:\\Users\\40340713\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\obj\\",
+      "outputPath": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -463,7 +463,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.6.0.220655, )"
+            "version": "[4.0.0.232914-pre6, )"
           }
         },
         "imports": [
