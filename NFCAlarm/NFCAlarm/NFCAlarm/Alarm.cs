@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace NFCAlarm
 {
@@ -29,16 +30,18 @@ namespace NFCAlarm
 
         public Alarm()
         {
-
+            Name = "";
+            TimeDate = DateTime.Now;
             SoundStatus = false;
+            SoundName = "";
             Vibrate = false;
             SnoozeStatus = false;
-            Status = false;
             SnoozeTime = 0;
             SnoozeTimes = 0;
-            SoundName = "";
+            Status = false;          
         }
 
+        [JsonIgnore]
         public string ImageName
         {
             get
@@ -48,6 +51,7 @@ namespace NFCAlarm
             }
         }
 
+        [JsonIgnore]
         public string SoundImageName
         {
             get
@@ -57,6 +61,7 @@ namespace NFCAlarm
             }
         }
 
+        [JsonIgnore]
         public string VibrateImageName
         {
             get
@@ -66,6 +71,7 @@ namespace NFCAlarm
             }
         }
 
+        [JsonIgnore]
         public string SnoozeImageName
         {
             get
@@ -75,20 +81,22 @@ namespace NFCAlarm
             }
         }
 
+        [JsonIgnore]
         public string Time
         {
             get { return TimeDate.Hour.ToString() + ":" + TimeDate.Minute.ToString(); }
         }
 
+        [JsonIgnore]
         public string SnoozeName
         {
             get { return SnoozeTime.ToString() + " Minutes, " + SnoozeTimes.ToString() + " Times"; }
         }
 
+        [JsonIgnore]
         public string ClassID
         {
-            get { return Name + Time; }
-            
+            get { return Name + Time; }            
         }
 
         public void Toggle()

@@ -23,7 +23,7 @@ namespace NFCAlarm
             else
             {
                 alarms = new Alarm[1];
-                alarms[0] = new Alarm(){ Name = "Test", TimeDate = DateTime.Now };
+                alarms[0] = new Alarm();
                 fileManager.SaveAlarms(alarms);
                 //alarmsButtonList.ItemsSource = alarms.ToList();
                 alarmsTextList.ItemsSource = alarms.ToList();

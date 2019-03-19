@@ -86,3 +86,7 @@ C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\40340713\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\MonoAndroid,Version=v8.1.AssemblyAttributes.cs
+C:\Users\40340713\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\NFCAlarm.Android.csprojAssemblyReference.cache
+C:\Users\40340713\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\NFCAlarm.Android.dll
+C:\Users\40340713\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\NFCAlarm.Android.pdb
