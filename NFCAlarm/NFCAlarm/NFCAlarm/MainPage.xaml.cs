@@ -13,11 +13,18 @@ namespace NFCAlarm
 
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            SetTime();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            SetTime();
             FileManager fileManager = new FileManager();
             alarms = fileManager.GetAlarms();
-            if(alarms != null)
-            { 
+            if (alarms != null)
+            {
                 alarmsTextList.ItemsSource = alarms.ToList();
             }
             else
@@ -28,13 +35,6 @@ namespace NFCAlarm
                 //alarmsButtonList.ItemsSource = alarms.ToList();
                 alarmsTextList.ItemsSource = alarms.ToList();
             }
-            SetTime();
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            SetTime();
         }
 
         async void SetTime()
@@ -96,7 +96,6 @@ namespace NFCAlarm
                 {
                     alarms[i].Toggle();
                     btn.Source = alarms[i].ImageName;
-                    if()
                     btn.HeightRequest = 120;
                     btn.WidthRequest = 120;
                     break;

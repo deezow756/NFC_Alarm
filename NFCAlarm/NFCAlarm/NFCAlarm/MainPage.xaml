@@ -16,7 +16,7 @@
                                     <Label Text="{Binding Name}" FontSize="30" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
                                     <Label Text="{Binding Time}" FontSize="25" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
                                 </StackLayout>
-                                <ImageButton Source="{Binding ImageName}" BackgroundColor="Transparent" Clicked="ImageButton_Clicked" ClassId="{Binding ClassID}" HeightRequest="130" WidthRequest="130" MinimumWidthRequest="120" MinimumHeightRequest="120" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
+                                <ImageButton Source="{Binding ImageName}" BackgroundColor="Transparent" Clicked="ImageButton_Clicked" ClassId="{Binding ClassID}" HeightRequest="120" WidthRequest="120" MinimumWidthRequest="120" MinimumHeightRequest="120" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -24,5 +24,4 @@
             </ListView>
         </StackLayout>
     </StackLayout>
-
 </ContentPage>

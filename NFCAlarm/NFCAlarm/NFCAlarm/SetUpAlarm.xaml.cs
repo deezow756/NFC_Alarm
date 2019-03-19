@@ -12,12 +12,28 @@ namespace NFCAlarm
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SetUpAlarm : ContentPage
 	{
-        private Alarm alarm;
+        public Alarm alarm;
+        private bool firstBoot;
 
         public SetUpAlarm()
         {
             InitializeComponent();
             Setup();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            List<Alarm> alarms = new List<Alarm>();
+            alarms.Add(alarm);
+
+            listAlarmSnooze.ItemsSource = null;
+            listAlarmSound.ItemsSource = null;
+            listAlarmVibrate.ItemsSource = null;
+
+            listAlarmVibrate.ItemsSource = alarms;
+            listAlarmSound.ItemsSource = alarms;
+            listAlarmSnooze.ItemsSource = alarms;
         }
 
         public SetUpAlarm (Alarm alarm)
@@ -31,8 +47,9 @@ namespace NFCAlarm
         {
             if(alarm != null)
             {
-                pickerTime.Time = alarm.TimeDate.TimeOfDay;
-                pickerDate.Date = alarm.TimeDate.Date;
+                DateTime dateTime = new DateTime(alarm.Year, alarm.Month, alarm.Day, alarm.Hour, alarm.Minute, 0);
+                pickerTime.Time = dateTime.TimeOfDay;
+                pickerDate.Date = dateTime.Date;
                 txtName.Text = alarm.Name;
                 SetupLists();
             }
@@ -57,7 +74,15 @@ namespace NFCAlarm
 
         private void BtnSave_Clicked(object sender, EventArgs e)
         {
-
+            alarm.Name = txtName.Text;
+            alarm.Minute = pickerTime.Time.Minutes;
+            alarm.Hour = pickerTime.Time.Hours;
+            alarm.Day = pickerDate.Date.Day;
+            alarm.Month = pickerDate.Date.Month;
+            alarm.Year = pickerDate.Date.Year;
+            FileManager fileManager = new FileManager();
+            fileManager.SaveAlarm(alarm);
+            Navigation.PopAsync();
         }
 
         //private void BtnMonday_Clicked(object sender, EventArgs e)
@@ -97,20 +122,18 @@ namespace NFCAlarm
 
         private void VibrateTrigger_Tapped(object sender, EventArgs e)
         {
-            var vc = ((ViewCell)sender);
             listAlarmVibrate.SelectedItem = null;
         }
 
         private void SoundTrigger_Tapped(object sender, EventArgs e)
         {
-            var vc = ((ViewCell)sender);
             listAlarmSound.SelectedItem = null;
         }
 
         private void SnoozeTrigger_Tapped(object sender, EventArgs e)
         {
-            var vc = ((ViewCell)sender);
             listAlarmSnooze.SelectedItem = null;
+            Navigation.PushAsync(new SetUpSnooze(this));
         }
 
         private void VibrateToggle_Clicked(object sender, EventArgs e)

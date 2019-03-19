@@ -11,3 +11,4 @@ C:\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.Assemb
 C:\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\XamlC.stamp
 C:\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.dll
 C:\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.pdb
+C:\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\SetUpSnooze.xaml.g.cs

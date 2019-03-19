@@ -41,5 +41,21 @@ namespace NFCAlarm
 
             File.WriteAllLines(alarmsPath, jsons.ToArray());
         }
+
+        public void SaveAlarm(Alarm alarm)
+        {
+            Alarm[] alarms = GetAlarms();
+
+            for (int i = 0; i < alarms.Length; i++)
+            {
+                if(alarms[i].ID == alarm.ID)
+                {
+                    alarms[i] = alarm;
+                    break;
+                }
+            }
+
+            SaveAlarms(alarms);
+        }
     }
 }
