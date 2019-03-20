@@ -10,7 +10,7 @@
                         <ViewCell x:Name="SnoozeToggle" Tapped="SnoozeToggle_Tapped">
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding SnoozeToggleName}" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
-                                <ImageButton Source="{Binding SnoozeImageName}" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="120" WidthRequest="120" MinimumHeightRequest="120" MinimumWidthRequest="120"/>
+                                <ImageButton Clicked="SnoozeToggle_Tapped" Source="{Binding SnoozeImageName}" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="120" WidthRequest="120" MinimumHeightRequest="120" MinimumWidthRequest="120"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

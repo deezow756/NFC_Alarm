@@ -56,7 +56,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -199,7 +199,7 @@
       ]
     },
     "Newtonsoft.Json/12.0.1": {
-      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
       "type": "package",
       "path": "newtonsoft.json/12.0.1",
       "files": [
@@ -238,7 +238,7 @@
       ]
     },
     "Xamarin.Forms/4.0.0.232914-pre6": {
-      "sha512": "IehBiIKvFMFl5MHUjZmleBn6zLSR+D65cL3n/UDZWf4BiPWqIHBijN9JAFI/htfUZKDMGqjqZTzXsg1SOw7xYQ==",
+      "sha512": "d6CrhlX+p0RQRRE83nVkbp9oYZBN8hpLxjkIEBZC12OB+yheQBjdcFq778erllJecBPbnX/+ajO53eiNsgCFPg==",
       "type": "package",
       "path": "xamarin.forms/4.0.0.232914-pre6",
       "files": [
@@ -411,23 +411,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\40340713\\.nuget\\packages\\": {},
+    "C:\\Users\\dorre\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
+      "projectUniqueName": "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
       "projectName": "NFCAlarm",
-      "projectPath": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
-      "packagesPath": "C:\\Users\\40340713\\.nuget\\packages\\",
-      "outputPath": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\obj\\",
+      "projectPath": "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj",
+      "packagesPath": "C:\\Users\\dorre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\40340713\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dorre\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

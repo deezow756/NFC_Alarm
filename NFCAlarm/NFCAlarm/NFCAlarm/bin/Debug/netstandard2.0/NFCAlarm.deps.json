@@ -58,7 +58,7 @@
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },
@@ -72,14 +72,14 @@
     "Newtonsoft.Json/12.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "sha512": "sha512-pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
       "path": "newtonsoft.json/12.0.1",
       "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
     },
     "Xamarin.Forms/4.0.0.232914-pre6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IehBiIKvFMFl5MHUjZmleBn6zLSR+D65cL3n/UDZWf4BiPWqIHBijN9JAFI/htfUZKDMGqjqZTzXsg1SOw7xYQ==",
+      "sha512": "sha512-d6CrhlX+p0RQRRE83nVkbp9oYZBN8hpLxjkIEBZC12OB+yheQBjdcFq778erllJecBPbnX/+ajO53eiNsgCFPg==",
       "path": "xamarin.forms/4.0.0.232914-pre6",
       "hashPath": "xamarin.forms.4.0.0.232914-pre6.nupkg.sha512"
     }

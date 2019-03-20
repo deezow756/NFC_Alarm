@@ -596,7 +596,7 @@
   },
   "libraries": {
     "Newtonsoft.Json/12.0.1": {
-      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
       "type": "package",
       "path": "newtonsoft.json/12.0.1",
       "files": [
@@ -635,7 +635,7 @@
       ]
     },
     "Xamarin.Forms/4.0.0.232914-pre6": {
-      "sha512": "IehBiIKvFMFl5MHUjZmleBn6zLSR+D65cL3n/UDZWf4BiPWqIHBijN9JAFI/htfUZKDMGqjqZTzXsg1SOw7xYQ==",
+      "sha512": "d6CrhlX+p0RQRRE83nVkbp9oYZBN8hpLxjkIEBZC12OB+yheQBjdcFq778erllJecBPbnX/+ajO53eiNsgCFPg==",
       "type": "package",
       "path": "xamarin.forms/4.0.0.232914-pre6",
       "files": [
@@ -812,20 +812,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\40340713\\.nuget\\packages\\": {}
+    "C:\\Users\\dorre\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
       "projectName": "NFCAlarm.iOS",
-      "projectPath": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
-      "packagesPath": "C:\\Users\\40340713\\.nuget\\packages\\",
-      "outputPath": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\obj\\",
+      "projectPath": "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
+      "packagesPath": "C:\\Users\\dorre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\40340713\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dorre\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -838,8 +838,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj": {
-              "projectPath": "C:\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj"
+            "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj": {
+              "projectPath": "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj"
             }
           }
         }

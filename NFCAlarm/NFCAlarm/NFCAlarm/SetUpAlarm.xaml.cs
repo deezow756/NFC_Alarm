@@ -123,6 +123,7 @@ namespace NFCAlarm
         private void VibrateTrigger_Tapped(object sender, EventArgs e)
         {
             listAlarmVibrate.SelectedItem = null;
+            Navigation.PushAsync(new SetUpVibrate(this));
         }
 
         private void SoundTrigger_Tapped(object sender, EventArgs e)

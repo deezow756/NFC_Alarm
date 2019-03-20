@@ -19,6 +19,7 @@ namespace NFCAlarm
         public string SoundPath { get; set; }
         public string SoundName { get; set; }
         public bool Vibrate { get; set; }
+        public string VibrationName { get; set; }
         public bool SnoozeStatus { get; set; }
         public int SnoozeTime { get; set; }
         public int SnoozeTimes { get; set; }
@@ -50,6 +51,7 @@ namespace NFCAlarm
             SoundStatus = false;
             SoundName = "";
             Vibrate = false;
+            VibrationName = "";
             SnoozeStatus = false;
             SnoozeTime = 5;
             SnoozeTimes = 0;

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NFCAlarm.SetUpVibrate">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listVibrateToggle" RowHeight="100" HasUnevenRows="False" HorizontalOptions="CenterAndExpand" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell x:Name="VibrateToggle" Tapped="VibrateToggle_Tapped">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding VibrateToggleName}" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                                <ImageButton Clicked="VibrateToggle_Tapped" Source="{Binding VibrateImageName}" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="120" WidthRequest="120" MinimumHeightRequest="120" MinimumWidthRequest="120"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Interval" FontSize="Medium"/>
+            <ListView x:Name="listVibrate" HorizontalOptions="CenterAndExpand" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ClassId="{Binding Name}" ImageSource="{Binding Image}" Text="{Binding Name}" Tapped="VibrateSelected_Tapped"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
