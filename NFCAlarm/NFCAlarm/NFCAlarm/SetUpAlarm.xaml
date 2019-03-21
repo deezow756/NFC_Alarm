@@ -24,7 +24,7 @@
                                 <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
                                     <Label Text="Vibrate" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
                                     <!--will have a type of vibrate but yet to implement-->
-                                    <Label Text="Simple" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                                    <Label Text="{Binding VibrationName}" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
                                 </StackLayout>
                                 <ImageButton Clicked="VibrateToggle_Clicked" Source="{Binding VibrateImageName}" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="120" WidthRequest="120" MinimumHeightRequest="120" MinimumWidthRequest="120"/>
                             </StackLayout>

@@ -11,6 +11,7 @@ namespace NFCAlarm
         {
             InitializeComponent();
 
+            DependencyService.Register<IRingtoneInterface>();
             MainPage = new NavigationPage(new MainPage());
         }
 

@@ -10,21 +10,17 @@ namespace NFCAlarm
     public partial class MainPage : ContentPage
     {
         Alarm[] alarms;
+        bool firstboot = false;
 
         public MainPage()
         {
             InitializeComponent();            
             SetTime();
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            SetTime();
             FileManager fileManager = new FileManager();
             alarms = fileManager.GetAlarms();
             if (alarms != null)
             {
+                alarmsTextList.ItemsSource = null;
                 alarmsTextList.ItemsSource = alarms.ToList();
             }
             else
@@ -32,8 +28,31 @@ namespace NFCAlarm
                 alarms = new Alarm[1];
                 alarms[0] = new Alarm() { Name = "Test" };
                 fileManager.SaveAlarms(alarms);
-                //alarmsButtonList.ItemsSource = alarms.ToList();
                 alarmsTextList.ItemsSource = alarms.ToList();
+            }
+            firstboot = true;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (firstboot)
+            {
+                SetTime();
+                FileManager fileManager = new FileManager();
+                alarms = fileManager.GetAlarms();
+                if (alarms != null)
+                {
+                    alarmsTextList.ItemsSource = null;
+                    alarmsTextList.ItemsSource = alarms.ToList();
+                }
+                else
+                {
+                    alarms = new Alarm[1];
+                    alarms[0] = new Alarm() { Name = "Test" };
+                    fileManager.SaveAlarms(alarms);
+                    alarmsTextList.ItemsSource = alarms.ToList();
+                }
             }
         }
 

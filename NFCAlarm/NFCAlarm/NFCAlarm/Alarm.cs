@@ -10,13 +10,13 @@ namespace NFCAlarm
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public int Minute { get; set; }
-        public int Hour { get; set; }
+        public string Minute { get; set; }
+        public string Hour { get; set; }
         public int Day { get; set; }
         public int Month { get; set; }
         public int Year { get; set; }
         public bool SoundStatus { get; set; }
-        public string SoundPath { get; set; }
+        public string SoundUri { get; set; }
         public string SoundName { get; set; }
         public bool Vibrate { get; set; }
         public string VibrationName { get; set; }
@@ -42,16 +42,27 @@ namespace NFCAlarm
                 File.WriteAllText(alarmsCounterPath, "0");
             }
             Name = "";
-            var dateTime = DateTime.Now;
-            Minute = dateTime.Minute;
-            Hour = dateTime.Hour;
-            Day = dateTime.Day;
-            Month = dateTime.Month;
-            Year = dateTime.Year;
+            var time = DateTime.Now;
+            if (time.Hour.ToString().Length == 1)
+            {
+                Hour = "0" + time.Hour.ToString();
+            }
+            else
+                Hour = time.Hour.ToString();
+            if (time.Minute.ToString().Length == 1)
+            {
+                Minute = "0" + time.Minute.ToString();
+            }
+            else
+                Minute = time.Minute.ToString();
+
+            Day = time.Day;
+            Month = time.Month;
+            Year = time.Year;
             SoundStatus = false;
             SoundName = "";
             Vibrate = false;
-            VibrationName = "";
+            VibrationName = "Basic Call";
             SnoozeStatus = false;
             SnoozeTime = 5;
             SnoozeTimes = 0;

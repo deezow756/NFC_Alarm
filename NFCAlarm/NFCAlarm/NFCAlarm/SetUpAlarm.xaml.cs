@@ -13,7 +13,6 @@ namespace NFCAlarm
 	public partial class SetUpAlarm : ContentPage
 	{
         public Alarm alarm;
-        private bool firstBoot;
 
         public SetUpAlarm()
         {
@@ -47,7 +46,7 @@ namespace NFCAlarm
         {
             if(alarm != null)
             {
-                DateTime dateTime = new DateTime(alarm.Year, alarm.Month, alarm.Day, alarm.Hour, alarm.Minute, 0);
+                DateTime dateTime = new DateTime(alarm.Year, alarm.Month, alarm.Day, int.Parse(alarm.Hour), int.Parse(alarm.Minute), 0);
                 pickerTime.Time = dateTime.TimeOfDay;
                 pickerDate.Date = dateTime.Date;
                 txtName.Text = alarm.Name;
@@ -75,8 +74,18 @@ namespace NFCAlarm
         private void BtnSave_Clicked(object sender, EventArgs e)
         {
             alarm.Name = txtName.Text;
-            alarm.Minute = pickerTime.Time.Minutes;
-            alarm.Hour = pickerTime.Time.Hours;
+            if (pickerTime.Time.Hours.ToString().Length == 1)
+            {
+                alarm.Hour = "0" + pickerTime.Time.Hours.ToString();
+            }
+            else
+                alarm.Hour = pickerTime.Time.Hours.ToString();
+            if (pickerTime.Time.Minutes.ToString().Length == 1)
+            {
+                alarm.Minute = "0" + pickerTime.Time.Minutes.ToString();
+            }
+            else
+                alarm.Minute = pickerTime.Time.Minutes.ToString();
             alarm.Day = pickerDate.Date.Day;
             alarm.Month = pickerDate.Date.Month;
             alarm.Year = pickerDate.Date.Year;
@@ -129,6 +138,7 @@ namespace NFCAlarm
         private void SoundTrigger_Tapped(object sender, EventArgs e)
         {
             listAlarmSound.SelectedItem = null;
+            Navigation.PushAsync(new SetUpSoundxaml(this));
         }
 
         private void SnoozeTrigger_Tapped(object sender, EventArgs e)

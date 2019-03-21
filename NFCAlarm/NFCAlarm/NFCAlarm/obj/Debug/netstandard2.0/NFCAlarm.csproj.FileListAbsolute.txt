@@ -27,3 +27,4 @@ C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\n
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.dll
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.pdb
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\SetUpVibrate.xaml.g.cs
+C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\SetUpSoundxaml.xaml.g.cs
