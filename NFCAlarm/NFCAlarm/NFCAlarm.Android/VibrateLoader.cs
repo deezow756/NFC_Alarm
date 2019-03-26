@@ -21,10 +21,10 @@ namespace NFCAlarm.Droid
         AudioManager audioManager;
 
         public void GetVibrations()
-        {  BadParcelableException badPa   /n.n5rtt   4   |N         BCVVGH Z;PackageContextFlags;  PackageContextFlags;PackageContextFlags;LauncherActivity.PowerService Z;  PackageContextFlags.  BVPOIUB 87 rcelableException  #
+        {  
             audioManager = (AudioManager)Android.App.Application.Context.GetSystemService(Context.AudioService);
             vibrateSetting = new VibrateSetting();
-            
+
         }
     }
 }

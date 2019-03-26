@@ -25,6 +25,12 @@ namespace NFCAlarm
             SetupLists();
 		}
 
+        protected override bool OnBackButtonPressed()
+        {
+            StopSound(currentSound.Name);
+            return base.OnBackButtonPressed();            
+        }
+
         private void SetupLists()
         {
             List<Alarm> alarms = new List<Alarm>();
@@ -41,7 +47,8 @@ namespace NFCAlarm
             if(setup.alarm.SoundName == "")
             {
                 setup.alarm.SoundName = sounds[0].Name;
-                setup.alarm.SoundUri = sounds[0].Uri;            }
+                setup.alarm.SoundUri = sounds[0].Uri;
+            }
 
             for (int i = 0; i < sounds.Count; i++)
             {
@@ -103,10 +110,15 @@ namespace NFCAlarm
             listSound.ItemsSource = sounds;
         }
 
+        private void StopSound(string name)
+        {
+            ringtones.StopRingtone(name);
+        }
+
         private async void StopSoundDelay(string name)
         {
-            await Task.Delay(6000);
-            
+            await Task.Delay(4000);
+
             ringtones.StopRingtone(name);
         }
     }
