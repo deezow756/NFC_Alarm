@@ -12,7 +12,8 @@ namespace NFCAlarm
             InitializeComponent();
 
             DependencyService.Register<IRingtoneInterface>();
-            MainPage = new NavigationPage(new MainPage());
+            //MainPage = new NavigationPage(new MainPage());
+            var alarmPage = new NavigationPage(new AlarmPage());
         }
 
         protected override void OnStart()

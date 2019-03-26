@@ -14,3 +14,4 @@ C:\Users\40340713\Desktop\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstan
 C:\Users\40340713\Desktop\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.dll
 C:\Users\40340713\Desktop\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.pdb
 C:\Users\40340713\Desktop\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\AlarmPage.xaml.g.cs
+C:\Users\40340713\Desktop\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\XamlC.stamp

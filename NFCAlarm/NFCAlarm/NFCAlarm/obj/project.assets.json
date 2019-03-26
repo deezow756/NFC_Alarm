@@ -11,6 +11,15 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "NdefLibrary/3.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -33,6 +42,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NFCForms/2.3.2": {
+        "type": "package",
+        "dependencies": {
+          "NdefLibrary": "3.0.2",
+          "Xamarin.Forms": "1.4.2.6359"
+        },
+        "compile": {
+          "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Poz1.NFCForms.Abstract.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Poz1.NFCForms.Abstract.dll": {}
         }
       },
       "System.Numerics.Vectors/4.5.0": {
@@ -89,6 +111,18 @@
         "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json"
+      ]
+    },
+    "NdefLibrary/3.0.2": {
+      "sha512": "bQo/pmqqgoirrvbykTsbWPYdex8n0YzlpMvlO03VqOrfps8befpPR+C5fjQo6MM6+cjEi7M8aKX+z6+O0aOcXQ==",
+      "type": "package",
+      "path": "ndeflibrary/3.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll",
+        "ndeflibrary.3.0.2.nupkg.sha512",
+        "ndeflibrary.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -256,6 +290,27 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.12.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "NFCForms/2.3.2": {
+      "sha512": "fntxuhsw9XV9TL3utg2QbKFZnGEjupAAKvr1st5tHBz3zznccOsNtHwqEirzveILcqPhRBSbfXqJhal9C9JndQ==",
+      "type": "package",
+      "path": "nfcforms/2.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Poz1.NFCForms.Abstract.dll",
+        "lib/MonoAndroid10/Poz1.NFCForms.Abstract.pdb",
+        "lib/MonoAndroid10/Poz1.NFCForms.Droid.dll",
+        "lib/MonoAndroid10/Poz1.NFCForms.Droid.pdb",
+        "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Poz1.NFCForms.Abstract.dll",
+        "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Poz1.NFCForms.Abstract.pdb",
+        "lib/wp8/Poz1.NFCForms.Abstract.dll",
+        "lib/wp8/Poz1.NFCForms.Abstract.pdb",
+        "lib/wp8/Poz1.NFCForms.WinPhone.dll",
+        "lib/wp8/Poz1.NFCForms.WinPhone.pdb",
+        "nfcforms.2.3.2.nupkg.sha512",
+        "nfcforms.nuspec"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
@@ -517,6 +572,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
+      "NFCForms >= 2.3.2",
       "Newtonsoft.Json >= 12.0.1",
       "Xamarin.Essentials >= 1.1.0",
       "Xamarin.Forms >= 4.0.0.232914-pre6"
@@ -569,6 +625,10 @@
             "version": "[2.0.3, )",
             "autoReferenced": true
           },
+          "NFCForms": {
+            "target": "Package",
+            "version": "[2.3.2, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.1, )"
@@ -589,5 +649,27 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'NdefLibrary 3.0.2' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "NdefLibrary",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'NFCForms 2.3.2' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "NFCForms",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

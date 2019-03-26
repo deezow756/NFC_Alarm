@@ -9,6 +9,11 @@ using Xamarin.Forms.Xaml;
 
 using Xamarin.Essentials;
 
+
+using NdefLibrary.Ndef;
+using Poz1.NFCForms.Abstract;
+using System.Collections.ObjectModel;
+
 namespace NFCAlarm
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -21,17 +26,24 @@ namespace NFCAlarm
             InitializeComponent();
             FileManager fileManager = new FileManager();
             Alarm[] alarms = fileManager.GetAlarms();
-            for (int i = 0; i < alarms.Length; i++)
-            {
-                if(DateTime.Now.Hour == int.Parse(alarms[i].Hour))
-                {
-                    if(DateTime.Now.Minute == int.Parse(alarms[i].Minute))
-                    {
-                        alarm = alarms[i];
-                        break;
-                    }
-                }
-            }
+            //if (alarms != null)
+            //{
+            //    for (int i = 0; i < alarms.Length; i++)
+            //    {
+            //        if (DateTime.Now.Hour == int.Parse(alarms[i].Hour))
+            //        {
+            //            if (DateTime.Now.Minute == int.Parse(alarms[i].Minute))
+            //            {
+            //                alarm = alarms[i];
+            //                break;
+            //            }
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            alarm = new Alarm() { Name = "Test" };
+            //}
 
             PlaySound();
         }
@@ -54,3 +66,5 @@ namespace NFCAlarm
         }
     }
 }
+
+        
