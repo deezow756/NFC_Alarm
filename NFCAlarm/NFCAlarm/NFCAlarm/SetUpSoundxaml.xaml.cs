@@ -14,10 +14,13 @@ namespace NFCAlarm
 	{
         List<Sound> sounds = new List<Sound>();
         SetUpAlarm setup;
+        Ringtones ringtones;
+        Sound currentSound;
 
-		public SetUpSoundxaml (SetUpAlarm setUpAlarm)
+        public SetUpSoundxaml (SetUpAlarm setUpAlarm)
 		{
 			InitializeComponent ();
+            ringtones = new Ringtones();
             setup = setUpAlarm;
             SetupLists();
 		}
@@ -27,8 +30,7 @@ namespace NFCAlarm
             List<Alarm> alarms = new List<Alarm>();
             alarms.Add(setup.alarm);
             listSoundToggle.ItemsSource = alarms;
-
-            Ringtones ringtones = new Ringtones();
+            
             string[,] uris = ringtones.GetRingtones();
 
             for (int i = 0; i < uris.Length / 2; i++)
@@ -49,16 +51,23 @@ namespace NFCAlarm
                 }
             }
             listSound.ItemsSource = sounds;
+
+            if(setup.alarm.SoundStatus == false)
+            {
+                listSound.IsEnabled = false;
+            }
         }
 
         private void SoundToggle_Tapped(object sender, EventArgs e)
         {
             if (setup.alarm.SoundStatus)
             {
+                ringtones.StopRingtone(currentSound.Name);
                 setup.alarm.SoundStatus = false;
                 List<Alarm> alarms = new List<Alarm>();
                 alarms.Add(setup.alarm);
                 listSoundToggle.ItemsSource = alarms;
+                listSound.IsEnabled = false;
             }
             else
             {
@@ -66,6 +75,7 @@ namespace NFCAlarm
                 List<Alarm> alarms = new List<Alarm>();
                 alarms.Add(setup.alarm);
                 listSoundToggle.ItemsSource = alarms;
+                listSound.IsEnabled = true;
             }
         }
 
@@ -78,12 +88,12 @@ namespace NFCAlarm
             {
                 if (ic.ClassId == sounds[i].Name)
                 {
+                    currentSound = sounds[i];
                     sounds[i].Status = true;
                     setup.alarm.SoundName = sounds[i].Name;
                     setup.alarm.SoundUri = sounds[i].Uri;
-                    Ringtones ringtones = new Ringtones();
                     ringtones.PlayRingtone(sounds[i].Uri);
-                    StopSound(sounds[i].Name);
+                    StopSoundDelay(sounds[i].Name);
                 }
                 else
                     sounds[i].Status = false;
@@ -93,10 +103,10 @@ namespace NFCAlarm
             listSound.ItemsSource = sounds;
         }
 
-        private async void StopSound(string name)
+        private async void StopSoundDelay(string name)
         {
             await Task.Delay(6000);
-            Ringtones ringtones = new Ringtones();
+            
             ringtones.StopRingtone(name);
         }
     }
