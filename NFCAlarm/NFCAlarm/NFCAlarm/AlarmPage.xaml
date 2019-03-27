@@ -4,9 +4,13 @@
              x:Class="NFCAlarm.AlarmPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Switch x:Name="IsWriteable"/>
+            <Switch x:Name="IsConnected"/>
+            <Switch x:Name="IsNDEFSupported"/>
+            <Label Text="Records"/>
+            <ListView x:Name="listRecords"/>
+            <ListView x:Name="listTechs"/>
+            <Button x:Name="btnWriteTag" Text="WriteTag" Clicked="HandleClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -126,5 +126,10 @@ namespace NFCAlarm
         {
             alarmsTextList.SelectedItem = null;
         }
+
+        private void BtnTest_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AlarmPage());
+        }
     }
 }

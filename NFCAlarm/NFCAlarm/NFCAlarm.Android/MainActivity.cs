@@ -4,6 +4,8 @@ using Android.Content.PM;
 using Android.Nfc;
 using Android.Nfc.Tech;
 using Android.OS;
+using Poz1.NFCForms.Abstract;
+using Poz1.NFCForms.Droid;
 using System;
 using System.IO;
 using System.Text;
@@ -13,8 +15,11 @@ namespace NFCAlarm.Droid
     [Activity(Label = "NFCAlarm", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     //[IntentFilter(new[] { NfcAdapter.ActionTechDiscovered })]
     //[MetaData(NfcAdapter.ActionTechDiscovered, Resource = "@xml/nfc")]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, NfcAdapter.ICreateNdefMessageCallback, NfcAdapter.IOnNdefPushCompleteCallback
-    {        
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    {
+        public NfcAdapter NFCdevice;
+        public NfcForms x;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -23,19 +28,47 @@ namespace NFCAlarm.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            NfcAdapter adapter = NfcAdapter.GetDefaultAdapter(this);
+            NfcManager NfcManager = (NfcManager)Android.App.Application.Context.GetSystemService(Context.NfcService);
+            NFCdevice = NfcManager.DefaultAdapter;
+
+            Xamarin.Forms.DependencyService.Register<INfcForms, NfcForms>();
+            x = Xamarin.Forms.DependencyService.Get<INfcForms>() as NfcForms;
 
             LoadApplication(new App());
         }
 
-        public NdefMessage CreateNdefMessage(NfcEvent e)
+        protected override void OnResume()
         {
-            throw new NotImplementedException();
+            base.OnResume();
+            if (NFCdevice != null)
+            {
+                var intent = new Intent(this, GetType()).AddFlags(ActivityFlags.SingleTop);
+                NFCdevice.EnableForegroundDispatch
+                (
+                    this,
+                    PendingIntent.GetActivity(this, 0, intent, 0),
+                    new[] { new IntentFilter(NfcAdapter.ActionTechDiscovered) },
+                    new String[][] {new string[] {
+                            NFCTechs.Ndef,
+                        },
+                        new string[] {
+                            NFCTechs.MifareClassic,
+                        },
+                    }
+                );
+            }
         }
 
-        public void OnNdefPushComplete(NfcEvent e)
+        protected override void OnPause()
         {
-            throw new NotImplementedException();
+            base.OnPause();
+            NFCdevice.DisableForegroundDispatch(this);
+        }
+
+        protected override void OnNewIntent(Intent intent)
+        {
+            base.OnNewIntent(intent);
+            x.OnNewIntent(this, intent);
         }
     }
 }

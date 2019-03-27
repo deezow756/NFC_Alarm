@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Android.Content;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,8 +13,7 @@ namespace NFCAlarm
             InitializeComponent();
 
             DependencyService.Register<IRingtoneInterface>();
-            //MainPage = new NavigationPage(new MainPage());
-            var alarmPage = new NavigationPage(new AlarmPage());
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
