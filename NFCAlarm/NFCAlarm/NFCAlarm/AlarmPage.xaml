@@ -4,13 +4,8 @@
              x:Class="NFCAlarm.AlarmPage">
     <ContentPage.Content>
         <StackLayout>
-            <Switch x:Name="IsWriteable"/>
-            <Switch x:Name="IsConnected"/>
-            <Switch x:Name="IsNDEFSupported"/>
-            <Label Text="Records"/>
-            <ListView x:Name="listRecords"/>
-            <ListView x:Name="listTechs"/>
-            <Button x:Name="btnWriteTag" Text="WriteTag" Clicked="HandleClicked"/>
+            <Label x:Name="txtRecord" Text="Alarm"/>
+            <StackLayout x:Name="CodeEntry" Orientation="Vertical"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

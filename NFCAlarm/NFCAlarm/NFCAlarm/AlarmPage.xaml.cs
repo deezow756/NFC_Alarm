@@ -21,18 +21,13 @@ namespace NFCAlarm
     public partial class AlarmPage : ContentPage
     {
         Alarm alarm;
+        public static string record;
 
-        private readonly INfcForms device;
+        private string code = "1234567";
 
         public AlarmPage()
         {
             InitializeComponent();
-
-            device = DependencyService.Get<INfcForms>();
-            device.NewTag += HandleNewTag;
-            device.TagConnected += device_TagConnected;
-            device.TagDisconnected += device_TagDisconnected;
-            
 
             FileManager fileManager = new FileManager();
             Alarm[] alarms = fileManager.GetAlarms();
@@ -55,8 +50,11 @@ namespace NFCAlarm
             alarm = new Alarm() { Name = "Test" };
             //}
 
-            PlaySound();            
-        }
+            PlaySound();
+            Nfc nfc = new Nfc();
+            nfc.PushMessage(code);
+            CheckForRecord();
+           }
 
         private void PlaySound()
         {
@@ -75,120 +73,19 @@ namespace NFCAlarm
             }
         }
 
-        void HandleClicked(object sender, EventArgs e)
+        private async void CheckForRecord()
         {
-            var spRecord = new NdefSpRecord
+            if(record == null)
             {
-                Uri = "www.lol.com",
-                NfcAction = NdefSpActRecord.NfcActionType.DoAction,
-            };
-            spRecord.AddTitle(new NdefTextRecord
-            {
-                Text = "Things and Stuff",
-                LanguageCode = "en"
-            });
-            // Add record to NDEF message
-            var msg = new NdefMessage { spRecord };
-            try
-            {
-                device.WriteTag(msg);
-                DisplayAlert("yay", "Tag Successfully Writen Too", "Dismiss");
+                await Task.Delay(500);
+                CheckForRecord();
             }
-            catch (Exception excp)
+            else if(record == "true")
             {
-                DisplayAlert("Error", excp.Message, "OK");
+                
+                AlarmEnterCode alarmEnterCode = new AlarmEnterCode(this, CodeEntry, alarm.SoundName, code);
+                record = null;
             }
-        }
-
-        void HandleNewTag(object sender, NfcFormsTag e)
-        {
-
-#if SILVERLIGHT
-            System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                IsWriteable.IsToggled = e.IsWriteable;
-                IsNDEFSupported.IsToggled = e.IsNdefSupported;
-
-                if (e.TechList != null)
-                    listTechs.ItemsSource = e.TechList;
-
-                if (e.IsNdefSupported)
-                    listRecords.ItemsSource = readNDEFMEssage(e.NdefMessage);
-            });
-#else
-
-            IsWriteable.IsToggled = e.IsWriteable;
-            IsNDEFSupported.IsToggled = e.IsNdefSupported;
-
-            if (e.TechList != null)
-                listTechs.ItemsSource = e.TechList;
-
-            if (e.IsNdefSupported)
-                listRecords.ItemsSource = readNDEFMEssage(e.NdefMessage);
-            else
-            {
-                DisplayAlert("error", "NDEF is not supported", "Dismiss");
-            }
-#endif
-        }
-
-        private ObservableCollection<string> readNDEFMEssage(NdefMessage message)
-        {
-            ObservableCollection<string> collection = new ObservableCollection<string>();
-
-            if (message == null)
-            {
-                return collection;
-            }
-
-            foreach (NdefRecord record in message)
-            {
-                // Go through each record, check if it's a Smart Poster
-                if (record.CheckSpecializedType(false) == typeof(NdefSpRecord))
-                {
-                    // Convert and extract Smart Poster info
-                    var spRecord = new NdefSpRecord(record);
-                    collection.Add("URI: " + spRecord.Uri);
-                    collection.Add("Titles: " + spRecord.TitleCount());
-                    collection.Add("1. Title: " + spRecord.Titles[0].Text);
-                    collection.Add("Action set: " + spRecord.ActionInUse());
-                }
-
-                if (record.CheckSpecializedType(false) == typeof(NdefUriRecord))
-                {
-                    // Convert and extract Smart Poster info
-                    var spRecord = new NdefUriRecord(record);
-                    collection.Add("Text: " + spRecord.Uri);
-                }
-            }
-            return collection;
-        }
-
-        void device_TagDisconnected(object sender, NfcFormsTag e)
-        {
-#if SILVERLIGHT
-            System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                IsConnected.IsToggled = false;
-            });
-#else
-            IsConnected.IsToggled = false;
-#endif
-
-        }
-
-        void device_TagConnected(object sender, NfcFormsTag e)
-        {
-
-#if SILVERLIGHT
-            System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                IsConnected.IsToggled = true;
-            });
-#else
-            IsConnected.IsToggled = true;
-#endif
-
         }
     }
 }

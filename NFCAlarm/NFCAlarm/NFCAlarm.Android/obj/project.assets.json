@@ -1215,7 +1215,6 @@
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v8.1": [
       "NFCAlarm >= 1.0.0",
-      "NFCForms >= 2.3.2",
       "Newtonsoft.Json >= 12.0.1",
       "Xamarin.Android.Support.Design >= 28.0.0.1",
       "Xamarin.Android.Support.v4 >= 28.0.0.1",
@@ -1262,10 +1261,6 @@
     "frameworks": {
       "monoandroid81": {
         "dependencies": {
-          "NFCForms": {
-            "target": "Package",
-            "version": "[2.3.2, )"
-          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.1, )"
