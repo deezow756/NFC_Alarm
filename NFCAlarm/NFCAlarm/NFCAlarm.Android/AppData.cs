@@ -17,5 +17,6 @@ namespace NFCAlarm.Droid
     {
         public static NfcAdapter adapter;
         public static Activity activity;
+        public static MainActivity mainActivity;
     }
 }

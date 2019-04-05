@@ -81,8 +81,7 @@ namespace NFCAlarm
                 CheckForRecord();
             }
             else if(record == "true")
-            {
-                
+            {                
                 AlarmEnterCode alarmEnterCode = new AlarmEnterCode(this, CodeEntry, alarm.SoundName, code);
                 record = null;
             }

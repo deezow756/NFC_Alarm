@@ -10,22 +10,21 @@ SNEP nfc(pn532spi);
 uint8_t ndefBuf[128];
 uint8_t recordBuf[128];
 
-LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
+LiquidCrystal lcd(3, 4, 5, 6, 7, 8);
 
 void setup()
 {    
     Serial.begin(9600);
     lcd.begin(16,2);
-    lcd.print("Scan Your Phone");
 }
 
 void loop()
-{
-    Serial.println("Get a message from Android");
+{    
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print("Scan Your Phone");
     int msgSize = nfc.read(ndefBuf, sizeof(ndefBuf));
     if (msgSize > 0) {
-        
-        Serial.println("\nSuccess");        
                    
         NdefMessage msg  = NdefMessage(ndefBuf, msgSize);
 
@@ -80,35 +79,25 @@ void loop()
           }
         }     
 
-        Serial.println(code);
         lcd.clear();
-        lcd.print(code);
+        lcd.print("Enter Code:");
+        lcd.setCursor(0,1);
+        lcd.print(code);    
+        SendMessage();
+        delay(5000);        
+    }
+    delay(1000);
+}
 
-        Serial.println("Send a message to Peer");
-    
+void SendMessage()
+{
         NdefMessage message = NdefMessage();
         message.addMimeMediaRecord("www.deezow.com", "true");
-        //message.addUriRecord("http://arduino.cc");
-        //message.addUriRecord("https://github.com/don/NDEF");
             
         int messageSize = message.getEncodedSize();
-        if (messageSize > sizeof(ndefBuf)) {
-            Serial.println("ndefBuf is too small");
-            while (1) {
-            }
-        }
-
         message.encode(ndefBuf);
     
         if (0 >= nfc.write(ndefBuf, messageSize)) {
-            Serial.println("Failed");
-        } else {
-            Serial.println("Success");
+            SendMessage();            
         }
-        delay(10000);
-        
-    } else {
-        Serial.println("failed");
-    }
-    delay(1000);
 }

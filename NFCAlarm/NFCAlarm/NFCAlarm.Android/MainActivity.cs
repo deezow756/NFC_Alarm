@@ -19,8 +19,10 @@ namespace NFCAlarm.Droid
     [Activity(Label = "NFCAlarm", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation), 
         IntentFilter(new[] { "android.nfc.action.ADAPTER_STATE_CHANGED" },
         Categories = new[] { "android.intent.category.DEFAULT" })]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, NfcAdapter.IOnNdefPushCompleteCallback, NfcAdapter.ICreateNdefMessageCallback
     {
+        public static string code;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -30,8 +32,16 @@ namespace NFCAlarm.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             AppData.adapter = NfcAdapter.GetDefaultAdapter(this);
             AppData.activity = this;
+            AppData.mainActivity = this;
+
+            SetBeamAktive(false);
 
             LoadApplication(new App());
+        }
+
+        public static void PushCode()
+        {
+            AppData.mainActivity.SetBeamAktive(true);
         }
 
         protected override void OnNewIntent(Intent intent)
@@ -39,18 +49,36 @@ namespace NFCAlarm.Droid
             Intent = intent;
             if (NfcAdapter.ActionNdefDiscovered == Intent.Action)
             {
-                IParcelable[] rawMsgs = Intent.GetParcelableArrayExtra(NfcAdapter.ExtraNdefMessages);
-                // only one message sent during the beam
-                NdefMessage msg = (NdefMessage)rawMsgs[0];
-                // record 0 contains the MIME type, record 1 is the AAR, if present
-                AlarmPage.record = Encoding.UTF8.GetString(msg.GetRecords()[0].GetPayload());
-                
+                ProcessIntent(intent);           
             }
+        }
+
+        public void OnNdefPushComplete(NfcEvent e)
+        {
+            SetBeamAktive(false);
+            EnableBackground();
+        }
+
+        public NdefMessage CreateNdefMessage(NfcEvent e)
+        {
+            DateTime time = DateTime.Now;
+            string text = code;
+            NdefMessage msg = new NdefMessage(new NdefRecord[] { CreateMimeRecord("sending code", Encoding.UTF8.GetBytes(text)) });
+            return msg;
+        }
+
+        public NdefRecord CreateMimeRecord(String mimeType, byte[] payload)
+        {
+            byte[] mimeBytes = Encoding.UTF8.GetBytes(mimeType);
+            NdefRecord mimeRecord = new NdefRecord(
+                NdefRecord.TnfMimeMedia, mimeBytes, new byte[0], payload);
+            return mimeRecord;
         }
 
         protected override void OnResume()
         {
             base.OnResume();
+            if (NfcAdapter.ActionNdefDiscovered == Intent.Action) ProcessIntent(Intent);
         }
 
         private void DisableBackground()
@@ -66,22 +94,22 @@ namespace NFCAlarm.Droid
             IntentFilter[] intentFilters = new IntentFilter[] { };
             var pendingIntent = PendingIntent.GetActivity(AppData.activity, 0, intent, 0);
 
-            AppData.adapter.EnableForegroundDispatch(AppData.activity, pendingIntent, null, null);
+            AppData.adapter.EnableForegroundDispatch(AppData.activity, pendingIntent, intentFilters, null);
         }
 
         protected override void OnPause()
         {
             base.OnPause();
-            AppData.adapter.DisableForegroundDispatch(this);
+            DisableBackground();
         }        
 
         private void ProcessIntent(Intent intent)
         {
-            IParcelable[] rawMsgs = intent.GetParcelableArrayExtra(NfcAdapter.ExtraNdefMessages);
+            IParcelable[] rawMsgs = Intent.GetParcelableArrayExtra(NfcAdapter.ExtraNdefMessages);
             // only one message sent during the beam
             NdefMessage msg = (NdefMessage)rawMsgs[0];
             // record 0 contains the MIME type, record 1 is the AAR, if present
-            Toast.MakeText(AppData.activity, Encoding.UTF8.GetString(msg.GetRecords()[0].GetPayload()), ToastLength.Long);
+            AlarmPage.record = Encoding.UTF8.GetString(msg.GetRecords()[0].GetPayload());
             //string msg_typ = msg.GetType().ToString();
             //string rec_typ = msg.GetRecords()[0].GetType().ToString();
             //byte[] rec_typinfo = msg.GetRecords()[0].GetTypeInfo();
@@ -92,7 +120,23 @@ namespace NFCAlarm.Droid
             //cList.Add(ByteArrayToText(rec_daten));
             //ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, cList);
             //cListView.Adapter = ListAdapter;
-        }      
+        }
+
+        public void SetBeamAktive(bool active)
+        {
+            if (active)
+            {
+                // Beam zum senden aktivieren
+                AppData.adapter.SetNdefPushMessageCallback(this, this);      // Callback zum setzen einer NDEF message
+                AppData.adapter.SetOnNdefPushCompleteCallback(this, this);   // Callback zum "horchen" für erfolgreiche Sendung der Nachricht
+            }
+            else
+            {
+
+                AppData.adapter.SetNdefPushMessageCallback(null, this);
+                AppData.adapter.SetOnNdefPushCompleteCallback(null, this);
+            }
+        }
 
         public static string BytearrayToHexstring(byte[] bytes)
         {
@@ -122,5 +166,6 @@ namespace NFCAlarm.Droid
                 return "";
             }
         }
+
     }
 }
