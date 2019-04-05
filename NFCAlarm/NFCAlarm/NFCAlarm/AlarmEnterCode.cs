@@ -15,13 +15,11 @@ namespace NFCAlarm
         Entry entry;
         Button button;
 
-        public AlarmEnterCode(AlarmPage alarmPage, StackLayout stackLayout, string ringtone , string code)
+        public AlarmEnterCode(AlarmPage alarmPage, StackLayout stackLayout, string code)
         {
             this.alarmPage = alarmPage;
             this.code = code;
-            this.ringtone = ringtone;
             this.stackLayout = stackLayout;
-
             Setup();
         }
 

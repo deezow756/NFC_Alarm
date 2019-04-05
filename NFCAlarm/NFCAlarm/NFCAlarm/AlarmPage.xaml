@@ -4,8 +4,10 @@
              x:Class="NFCAlarm.AlarmPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="txtRecord" Text="Alarm"/>
-            <StackLayout x:Name="CodeEntry" Orientation="Vertical"/>
+            <Label x:Name="txtName" Text="" FontSize="50" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label x:Name="txtTime" Text="" FontSize="50" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label x:Name="txtMessage" Text="" FontSize="30" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <StackLayout x:Name="CodeEntry" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

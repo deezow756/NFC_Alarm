@@ -22,8 +22,9 @@ namespace NFCAlarm
     {
         Alarm alarm;
         public static string record;
+        public string curCode;
 
-        private string code = "1234567";
+        AlarmEnterCode enterCode;
 
         public AlarmPage()
         {
@@ -31,30 +32,67 @@ namespace NFCAlarm
 
             FileManager fileManager = new FileManager();
             Alarm[] alarms = fileManager.GetAlarms();
-            //if (alarms != null)
-            //{
-            //    for (int i = 0; i < alarms.Length; i++)
-            //    {
-            //        if (DateTime.Now.Hour == int.Parse(alarms[i].Hour))
-            //        {
-            //            if (DateTime.Now.Minute == int.Parse(alarms[i].Minute))
-            //            {
-            //                alarm = alarms[i];
-            //                break;
-            //            }
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            alarm = new Alarm() { Name = "Test" };
-            //}
-
-            PlaySound();
-            Nfc nfc = new Nfc();
-            nfc.PushMessage(code);
-            CheckForRecord();
+            if (alarms != null)
+            {
+                alarm = alarms[0];
+                //for (int i = 0; i < alarms.Length; i++)
+                //{
+                //    if (DateTime.Now.Hour == int.Parse(alarms[i].Hour))
+                //    {
+                //        if (DateTime.Now.Minute == int.Parse(alarms[i].Minute))
+                //        {
+                //            alarm = alarms[i];
+                //            break;
+                //        }
+                //    }
+                //}
+                txtName.Text = alarm.Name;
+                txtTime.Text = alarm.Time;
+                txtMessage.Text = "Scan Your Phone On Arduino";
+                PlaySound();
+                StartVibrate();
+                SendRandomCode();
+                CheckForRecord();
+            }
+            else
+            {
+                txtName.Text = "No Alarms";
+            }            
            }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            PlaySound();
+            StartVibrate();
+            SendRandomCode();
+            CheckForRecord();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            Ringtones ringtones = new Ringtones();
+            ringtones.StopRingtone(alarm.SoundName);
+            Vibration.Cancel();
+            return base.OnBackButtonPressed();
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            Ringtones ringtones = new Ringtones();
+            ringtones.StopRingtone(alarm.SoundName);
+            Vibration.Cancel();
+        }
+
+        private void SendRandomCode()
+        {
+            Random random = new Random();
+            int code = random.Next(999999);
+            curCode = code.ToString();
+            Nfc nfc = new Nfc();
+            nfc.PushMessage(code.ToString());
+        }
 
         private void PlaySound()
         {
@@ -69,8 +107,16 @@ namespace NFCAlarm
         {
             if (alarm.Vibrate)
             {
-                Vibration.Vibrate();
+                Vibration.Vibrate(99999999);
             }
+        }
+
+        public void CancelAlarm()
+        {
+            Ringtones ringtones = new Ringtones();
+            ringtones.StopRingtone(alarm.SoundName);
+            Vibration.Cancel();
+            Navigation.PopAsync();
         }
 
         private async void CheckForRecord()
@@ -82,7 +128,7 @@ namespace NFCAlarm
             }
             else if(record == "true")
             {                
-                AlarmEnterCode alarmEnterCode = new AlarmEnterCode(this, CodeEntry, alarm.SoundName, code);
+                enterCode = new AlarmEnterCode(this, CodeEntry, curCode);
                 record = null;
             }
         }

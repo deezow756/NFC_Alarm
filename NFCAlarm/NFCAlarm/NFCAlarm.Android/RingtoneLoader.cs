@@ -39,6 +39,8 @@ namespace NFCAlarm.Droid
             RingtoneManager ringtoneManager = new RingtoneManager(context);
             Android.Net.Uri _uri = Android.Net.Uri.Parse(uri);
 
+            AudioManager audioManager = (AudioManager)context.GetSystemService(Context.AudioService);
+
             if (ringtone != null)
             {
                 if (ringtone.IsPlaying)
@@ -48,6 +50,8 @@ namespace NFCAlarm.Droid
             }
 
             ringtone = ringtoneManager.GetRingtone(ringtoneManager.GetRingtonePosition(_uri));
+
+            ringtone.StreamType = Stream.Alarm;
 
             ringtone.Play();
         }
