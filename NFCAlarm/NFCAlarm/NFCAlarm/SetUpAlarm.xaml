@@ -4,7 +4,7 @@
              x:Class="NFCAlarm.SetUpAlarm">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-            <TimePicker x:Name="pickerTime" Format="t" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Scale="1.5"/>
+            <TimePicker x:Name="pickerTime" Format="t" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Scale="1.5" PropertyChanged="PickerTime_PropertyChanged"/>
             <DatePicker x:Name="pickerDate" Format="d" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Scale="1.5"/>
             <!--<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                 <Button x:Name="btnMonday" Text="M" ClassId="Mon" Clicked="BtnMonday_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50"/>

@@ -26,7 +26,6 @@ C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\n
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\SetUpAlarm.xaml.g.cs
-C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\SetUpSnooze.xaml.g.cs
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\SetUpSoundxaml.xaml.g.cs
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\SetUpVibrate.xaml.g.cs
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\obj\Debug\netstandard2.0\NFCAlarm.csproj.CoreCompileInputs.cache

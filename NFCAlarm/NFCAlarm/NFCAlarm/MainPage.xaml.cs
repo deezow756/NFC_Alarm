@@ -14,7 +14,22 @@ namespace NFCAlarm
 
         public MainPage()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            SetUp();
+            firstboot = true;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (firstboot)
+            {
+                SetUp();
+            }
+        }
+
+        private void SetUp()
+        {
             SetTime();
             FileManager fileManager = new FileManager();
             alarms = fileManager.GetAlarms();
@@ -25,34 +40,7 @@ namespace NFCAlarm
             }
             else
             {
-                alarms = new Alarm[1];
-                alarms[0] = new Alarm() { Name = "Test" };
-                fileManager.SaveAlarms(alarms);
-                alarmsTextList.ItemsSource = alarms.ToList();
-            }
-            firstboot = true;
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            if (firstboot)
-            {
-                SetTime();
-                FileManager fileManager = new FileManager();
-                alarms = fileManager.GetAlarms();
-                if (alarms != null)
-                {
-                    alarmsTextList.ItemsSource = null;
-                    alarmsTextList.ItemsSource = alarms.ToList();
-                }
-                else
-                {
-                    alarms = new Alarm[1];
-                    alarms[0] = new Alarm() { Name = "Test" };
-                    fileManager.SaveAlarms(alarms);
-                    alarmsTextList.ItemsSource = alarms.ToList();
-                }
+                txtError.Text = "No Alarms";
             }
         }
 
@@ -117,12 +105,12 @@ namespace NFCAlarm
                     if(alarms[i].Status)
                     {
                         XAlarmManager alarmManager = new XAlarmManager();
-                        alarmManager.SetAlarm(alarms[i].ID, int.Parse(alarms[i].Minute), int.Parse(alarms[i].Hour), alarms[i].Day, alarms[i].Month, alarms[i].Year);
+                        alarmManager.SetAlarm(alarms[i]);
                     }
                     else
                     {
                         XAlarmManager alarmManager = new XAlarmManager();
-                        alarmManager.CancelAlarm(alarms[i].ID);
+                        alarmManager.CancelAlarm(alarms[i]);
                     }
                     FileManager fileManager = new FileManager();
                     fileManager.SaveAlarm(alarms[i]);
@@ -134,14 +122,53 @@ namespace NFCAlarm
             }
         }
 
-        private void AlarmsTextList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void ImageButton_ClickedDelete(object sender, EventArgs e)
+        {
+            var btn = ((ImageButton)sender);
+
+            var result = await DisplayAlert("Warning", "Are You Sure You Want To Delete This Alarm", "Yes", "No");
+
+            if(result)
+            {
+                FileManager fileManager = new FileManager();
+                List<Alarm> lstalarms = new List<Alarm>(fileManager.GetAlarms());
+
+                for (int i = 0; i < lstalarms.Count; i++)
+                {
+                    if(alarms[i].ClassID == btn.ClassId)
+                    {
+                        fileManager.DeleteAlarm(lstalarms[i]);
+                        XAlarmManager alarmManager = new XAlarmManager();
+                        alarmManager.CancelAlarm(lstalarms[i]);
+                    }
+                }
+            }
+
+            SetUp();
+        }
+
+            private void AlarmsTextList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             alarmsTextList.SelectedItem = null;
         }
 
-        private void BtnTest_Clicked(object sender, EventArgs e)
+        private void BtnAddAlarm_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AlarmPage());
+            FileManager fileManager = new FileManager();
+            if (alarms == null)
+            {
+                alarms = new Alarm[1];
+                alarms[0] = new Alarm();               
+            }
+            else
+            {
+                List<Alarm> lstalarms = new List<Alarm>(alarms);
+                lstalarms.Add(new Alarm());
+
+                alarms = lstalarms.ToArray();
+            }
+            fileManager.SaveAlarms(alarms);
+            SetUp();
         }
     }
 }

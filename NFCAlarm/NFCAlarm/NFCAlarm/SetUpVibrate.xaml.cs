@@ -38,18 +38,18 @@ namespace NFCAlarm
             alarms.Add(setup.alarm);
             listVibrateToggle.ItemsSource = alarms;
 
-            if(setup.alarm.VibrationName == "" || setup.alarm.VibrationName == null)
-            {
-                setup.alarm.VibrationName = "Basic Call";
-            }
+            //if(setup.alarm.VibrationName == "" || setup.alarm.VibrationName == null)
+            //{
+            //    setup.alarm.VibrationName = "Basic Call";
+            //}
 
-            for (int i = 0; i < vibrates.Count; i++)
-            {
-                if (setup.alarm.VibrationName == vibrates[i].Name)
-                {
-                    vibrates[i].Status = true;
-                }
-            }
+            //for (int i = 0; i < vibrates.Count; i++)
+            //{
+            //    if (setup.alarm.VibrationName == vibrates[i].Name)
+            //    {
+            //        vibrates[i].Status = true;
+            //    }
+            //}
             listVibrate.ItemsSource = vibrates;
         }
 
@@ -81,7 +81,7 @@ namespace NFCAlarm
                 if (ic.ClassId == vibrates[i].Name)
                 {
                     vibrates[i].Status = true;
-                    setup.alarm.VibrationName = vibrates[i].Name;
+                    //setup.alarm.VibrationName = vibrates[i].Name;
                 }
                 else
                     vibrates[i].Status = false;

@@ -22,6 +22,9 @@ namespace NFCAlarm.Droid
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, NfcAdapter.IOnNdefPushCompleteCallback, NfcAdapter.ICreateNdefMessageCallback
     {
         public static string code;
+        public static bool startAlarm;
+
+        public bool isForgroundDispatch = false;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -36,7 +39,7 @@ namespace NFCAlarm.Droid
 
             SetBeamAktive(false);
 
-            LoadApplication(new App());
+            LoadApplication(new App(startAlarm));
         }
 
         public static void PushCode()
@@ -83,18 +86,26 @@ namespace NFCAlarm.Droid
 
         private void DisableBackground()
         {
-            AppData.adapter.DisableForegroundDispatch(AppData.activity);
+            if (AppData.mainActivity.isForgroundDispatch)
+            {
+                AppData.adapter.DisableForegroundDispatch(AppData.activity);
+                AppData.mainActivity.isForgroundDispatch = false;
+            }
         }
 
         public static void EnableBackground()
         {
-            var intent = new Intent(Android.App.Application.Context, typeof(MainActivity));
-            intent.AddFlags(ActivityFlags.ReceiverReplacePending);
+            if (!AppData.mainActivity.isForgroundDispatch)
+            {
+                var intent = new Intent(Android.App.Application.Context, typeof(MainActivity));
+                intent.AddFlags(ActivityFlags.ReceiverReplacePending);
 
-            IntentFilter[] intentFilters = new IntentFilter[] { };
-            var pendingIntent = PendingIntent.GetActivity(AppData.activity, 0, intent, 0);
+                IntentFilter[] intentFilters = new IntentFilter[] { };
+                var pendingIntent = PendingIntent.GetActivity(AppData.activity, 0, intent, 0);
 
-            AppData.adapter.EnableForegroundDispatch(AppData.activity, pendingIntent, intentFilters, null);
+                AppData.adapter.EnableForegroundDispatch(AppData.activity, pendingIntent, intentFilters, null);
+                AppData.mainActivity.isForgroundDispatch = true;
+            }
         }
 
         protected override void OnPause()

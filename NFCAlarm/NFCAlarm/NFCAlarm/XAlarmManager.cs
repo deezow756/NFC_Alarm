@@ -7,14 +7,14 @@ namespace NFCAlarm
 {
     public class XAlarmManager
     {
-        public void SetAlarm(int id, int min, int hour, int day, int month, int year)
+        public void SetAlarm(Alarm alarm)
         {
-            DependencyService.Get<IAlarmManager>().SetAlarm(id, min, hour, day, month, year);
+            DependencyService.Get<IAlarmManager>().SetAlarm(alarm);
         }
 
-        public void CancelAlarm(int id)
+        public void CancelAlarm(Alarm alarm)
         {
-            DependencyService.Get<IAlarmManager>().CancelAlarm(id);
+            DependencyService.Get<IAlarmManager>().CancelAlarm(alarm);
         }
     }
 }

@@ -9,6 +9,7 @@ namespace NFCAlarm
     public class Alarm
     {
         public int ID { get; set; }
+        public string Intent { get; set; }
         public string Name { get; set; }
         public string Minute { get; set; }
         public string Hour { get; set; }
@@ -33,13 +34,15 @@ namespace NFCAlarm
             {
                 string counter = File.ReadAllText(alarmsCounterPath);
                 ID = int.Parse(counter);
+                File.WriteAllText(alarmsCounterPath, (ID + 1).ToString());
             }
             else
             {
                 File.WriteAllText(alarmsCounterPath, "0");
+                ID = 0;
             }
-            Name = "";
-            var time = DateTime.Now;
+            Name = "Alarm " + ID.ToString();
+            var time = DateTime.Now.AddDays(1);
             if (time.Hour.ToString().Length == 1)
             {
                 Hour = "0" + time.Hour.ToString();

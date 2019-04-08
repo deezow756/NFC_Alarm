@@ -8,12 +8,19 @@ namespace NFCAlarm
 {
     public partial class App : Application
     {
-        public App()
+        public App(bool startAlarm)
         {
             InitializeComponent();
             DependencyService.Register<INfcInterface>();
             DependencyService.Register<IRingtoneInterface>();
-            MainPage = new NavigationPage(new MainPage());
+            if (startAlarm)
+            {
+                MainPage = new NavigationPage(new AlarmPage());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
         }
 
         protected override void OnStart()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace NFCAlarm
@@ -8,7 +9,6 @@ namespace NFCAlarm
     public class AlarmEnterCode
     {
         AlarmPage alarmPage;
-        string ringtone;
         string code;
 
         StackLayout stackLayout;
@@ -40,9 +40,14 @@ namespace NFCAlarm
         {
             if(entry.Text == code)
             {
-                //Ringtones ringtones = new Ringtones();
-                //ringtones.StopRingtone(ringtone);
-                alarmPage.Navigation.PopAsync();
+                Ringtones ringtones = new Ringtones();
+                ringtones.StopRingtone(alarmPage.alarm.SoundName);
+                alarmPage.CancelVibration = true;
+                Vibration.Cancel();
+                alarmPage.alarm.Status = false;
+                FileManager fileManager = new FileManager();
+                fileManager.SaveAlarm(alarmPage.alarm);
+                CloseApp closeApp = new CloseApp();
             }
         }
     }

@@ -57,5 +57,20 @@ namespace NFCAlarm
 
             SaveAlarms(alarms);
         }
+
+        public void DeleteAlarm(Alarm alarm)
+        {
+            List<Alarm> alarms = new List<Alarm>(GetAlarms());
+
+            for (int i = 0; i < alarms.Count; i++)
+            {
+                if(alarm.ID == alarms[i].ID)
+                {
+                    alarms.Remove(alarms[i]);
+                }
+            }
+
+            SaveAlarms(alarms.ToArray());
+        }
     }
 }

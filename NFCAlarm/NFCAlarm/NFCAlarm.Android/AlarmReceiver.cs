@@ -17,9 +17,12 @@ namespace NFCAlarm.Droid
     {
         public override void OnReceive(Context context, Intent intent)
         {
-            Toast.MakeText(context, "I'm running", ToastLength.Short).Show();
-            //Intent startIntent = new Intent(context, typeof(MainActivity));
-            //context.StartService(startIntent);
+            MainActivity.startAlarm = true;
+            string id = intent.DataString;
+            AlarmPage.id = id;
+            Intent startIntent = new Intent(context, typeof(MainActivity));
+            startIntent.AddFlags(ActivityFlags.NewTask);
+            context.StartActivity(startIntent);
         }
     }
 }

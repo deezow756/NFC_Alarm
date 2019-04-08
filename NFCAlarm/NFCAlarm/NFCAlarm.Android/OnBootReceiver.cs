@@ -13,12 +13,10 @@ using Java.Util;
 
 namespace NFCAlarm.Droid
 {
-    [BroadcastReceiver(Enabled = true)]
-    [IntentFilter(new[] { Intent.ActionBootCompleted })]
+    //[BroadcastReceiver(Enabled = true)]
+    //[IntentFilter(new[] { Intent.ActionBootCompleted })]
     public class OnBootReceiver : BroadcastReceiver
     {
-        AlarmManager alarmManager;
-
         public override void OnReceive(Context context, Intent intent)
         {
             if (intent.Action.Equals("android.intent.action.BOOT_COMPLETED"))
@@ -34,7 +32,7 @@ namespace NFCAlarm.Droid
                         PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, alarms[i].ID, newIntent, 0);
 
                         Calendar calendar = Calendar.GetInstance(Java.Util.TimeZone.Default);
-                        calendar.TimeInMillis = SystemClock.CurrentThreadTimeMillis();
+                        calendar.TimeInMillis = Java.Lang.JavaSystem.CurrentTimeMillis();
                         calendar.Set(CalendarField.Year, alarms[i].Year);
                         calendar.Set(CalendarField.Month, alarms[i].Month);
                         calendar.Set(CalendarField.DayOfMonth, alarms[i].Day);
@@ -43,9 +41,9 @@ namespace NFCAlarm.Droid
                         calendar.Set(CalendarField.Second, 0);
 
                         AlarmManager manager = (AlarmManager)Android.App.Application.Context.GetSystemService(Context.AlarmService);
-                        manager.SetExact(AlarmType.RtcWakeup, calendar.TimeInMillis, pendingIntent);
+                        manager.SetExact(AlarmType.RtcWakeup, Java.Lang.JavaSystem.CurrentTimeMillis() + 5 * 1000, pendingIntent);
                     }
-                }                
+                }
             }
         }
 

@@ -20,9 +20,12 @@ namespace NFCAlarm
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AlarmPage : ContentPage
     {
-        Alarm alarm;
+        public Alarm alarm;
         public static string record;
+        public static string id;
         public string curCode;
+
+        public bool CancelVibration = false;
 
         AlarmEnterCode enterCode;
 
@@ -35,54 +38,38 @@ namespace NFCAlarm
             if (alarms != null)
             {
                 alarm = alarms[0];
-                //for (int i = 0; i < alarms.Length; i++)
-                //{
-                //    if (DateTime.Now.Hour == int.Parse(alarms[i].Hour))
-                //    {
-                //        if (DateTime.Now.Minute == int.Parse(alarms[i].Minute))
-                //        {
-                //            alarm = alarms[i];
-                //            break;
-                //        }
-                //    }
-                //}
-                txtName.Text = alarm.Name;
-                txtTime.Text = alarm.Time;
-                txtMessage.Text = "Scan Your Phone On Arduino";
-                PlaySound();
-                StartVibrate();
-                SendRandomCode();
-                CheckForRecord();
+                if (id != null)
+                {
+                    for (int i = 0; i < alarms.Length; i++)
+                    {
+                        if (alarms[i].ID.ToString() == id)
+                        {
+                            alarm = alarms[i];
+                        }
+                    }
+
+                    if (alarm != null)
+                    {
+                        txtName.Text = alarm.Name;
+                        txtTime.Text = alarm.Time;
+                        txtMessage.Text = "Scan Your Phone On Arduino";
+                        PlaySound();
+                        StartVibrate();
+                        SendRandomCode();
+                        CheckForRecord();
+                    }
+                }
             }
             else
             {
                 txtName.Text = "No Alarms";
-            }            
-           }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            PlaySound();
-            StartVibrate();
-            SendRandomCode();
-            CheckForRecord();
+            }
         }
 
         protected override bool OnBackButtonPressed()
         {
-            Ringtones ringtones = new Ringtones();
-            ringtones.StopRingtone(alarm.SoundName);
-            Vibration.Cancel();
+            CancelAlarm();
             return base.OnBackButtonPressed();
-        }
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            Ringtones ringtones = new Ringtones();
-            ringtones.StopRingtone(alarm.SoundName);
-            Vibration.Cancel();
         }
 
         private void SendRandomCode()
@@ -103,11 +90,17 @@ namespace NFCAlarm
             }
         }
 
-        private void StartVibrate()
+        private async void StartVibrate()
         {
-            if (alarm.Vibrate)
+            if (alarm.Vibrate && CancelVibration == false)
             {
-                Vibration.Vibrate(99999999);
+               MainThread.BeginInvokeOnMainThread( ()=>
+               {
+                   Vibration.Vibrate(3000);
+               });
+                
+                await Task.Delay(3500);
+                StartVibrate();
             }
         }
 
@@ -115,7 +108,11 @@ namespace NFCAlarm
         {
             Ringtones ringtones = new Ringtones();
             ringtones.StopRingtone(alarm.SoundName);
+            CancelVibration = true;
             Vibration.Cancel();
+            alarm.Status = false;
+            FileManager fileManager = new FileManager();
+            fileManager.SaveAlarm(alarm);
             Navigation.PopAsync();
         }
 
@@ -127,8 +124,10 @@ namespace NFCAlarm
                 CheckForRecord();
             }
             else if(record == "true")
-            {                
-                enterCode = new AlarmEnterCode(this, CodeEntry, curCode);
+            {
+                MainThread.BeginInvokeOnMainThread(() => {
+                    enterCode = new AlarmEnterCode(this, CodeEntry, curCode);
+                });                
                 record = null;
             }
         }

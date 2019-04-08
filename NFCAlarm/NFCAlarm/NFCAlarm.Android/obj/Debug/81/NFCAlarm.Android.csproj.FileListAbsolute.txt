@@ -248,6 +248,9 @@ C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\res\drawable\delete.png
+C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm\bin\Debug\netstandard2.0\NFCAlarm.dll
+C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\bin\Debug\NFCAlarm.dll.mdb
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\linksrc\NFCAlarm.dll.mdb
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\linksrc\Poz1.NFCForms.Abstract.dll.mdb
 C:\Users\dorre\Documents\GitHub\NFC_Alarm\NFCAlarm\NFCAlarm\NFCAlarm.Android\obj\Debug\81\linksrc\Poz1.NFCForms.Droid.dll.mdb

@@ -2,16 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:NFCAlarm"
-             x:Class="NFCAlarm.MainPage">
+             x:Class="NFCAlarm.MainPage"
+             NavigationPage.HasNavigationBar="False">
 
     <StackLayout>
         <Label x:Name="txtTime" Text="" FontSize="70"  HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="Center" WidthRequest="600" VerticalOptions="CenterAndExpand"/>
         <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
-            <ListView x:Name="alarmsTextList" RowHeight="100" SeparatorVisibility="Default" ItemSelected="AlarmsTextList_ItemSelected" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <ListView x:Name="alarmsTextList" RowHeight="100" SeparatorVisibility="Default" ItemSelected="AlarmsTextList_ItemSelected" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="400">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Tapped="ImageCell_Tapped" ClassId="{Binding ClassID}">
                             <StackLayout Orientation="Horizontal">
+                                <ImageButton Source="delete.png" BackgroundColor="Transparent" Clicked="ImageButton_ClickedDelete" ClassId="{Binding ClassID}" HeightRequest="120" WidthRequest="120" MinimumWidthRequest="120" MinimumHeightRequest="120" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
                                 <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
                                     <Label Text="{Binding Name}" FontSize="30" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
                                     <Label Text="{Binding Time}" FontSize="25" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
@@ -23,6 +25,7 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-        <Button x:Name="btnTest" Text="TestAlarm" Clicked="BtnTest_Clicked"/>
+        <Label x:Name="txtError" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+        <Button x:Name="btnAddAlarm" Text="Add Alarm" Clicked="BtnAddAlarm_Clicked" FontSize="Large" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"/>
     </StackLayout>
 </ContentPage>
