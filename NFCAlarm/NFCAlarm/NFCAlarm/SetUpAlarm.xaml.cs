@@ -25,14 +25,12 @@ namespace NFCAlarm
             base.OnAppearing();
             List<Alarm> alarms = new List<Alarm>();
             alarms.Add(alarm);
-
-            listAlarmSnooze.ItemsSource = null;
+            
             listAlarmSound.ItemsSource = null;
             listAlarmVibrate.ItemsSource = null;
 
             listAlarmVibrate.ItemsSource = alarms;
             listAlarmSound.ItemsSource = alarms;
-            listAlarmSnooze.ItemsSource = alarms;
         }
 
         public SetUpAlarm (Alarm alarm)
@@ -68,7 +66,6 @@ namespace NFCAlarm
             
             listAlarmVibrate.ItemsSource = alarms;
             listAlarmSound.ItemsSource = alarms;
-            listAlarmSnooze.ItemsSource = alarms;
         }
 
         private void BtnSave_Clicked(object sender, EventArgs e)
@@ -129,22 +126,16 @@ namespace NFCAlarm
 
         //}
 
-        private void VibrateTrigger_Tapped(object sender, EventArgs e)
-        {
-            listAlarmVibrate.SelectedItem = null;
-            Navigation.PushAsync(new SetUpVibrate(this));
-        }
+        //private void VibrateTrigger_Tapped(object sender, EventArgs e)
+        //{
+        //    listAlarmVibrate.SelectedItem = null;
+        //    Navigation.PushAsync(new SetUpVibrate(this));
+        //}
 
         private void SoundTrigger_Tapped(object sender, EventArgs e)
         {
             listAlarmSound.SelectedItem = null;
             Navigation.PushAsync(new SetUpSoundxaml(this));
-        }
-
-        private void SnoozeTrigger_Tapped(object sender, EventArgs e)
-        {
-            listAlarmSnooze.SelectedItem = null;
-            Navigation.PushAsync(new SetUpSnooze(this));
         }
 
         private void VibrateToggle_Clicked(object sender, EventArgs e)
@@ -181,26 +172,6 @@ namespace NFCAlarm
             else
             {
                 alarm.SoundStatus = true;
-                btn.Source = "toggle_on.png";
-                btn.WidthRequest = 120;
-                btn.HeightRequest = 120;
-            }
-        }
-
-        private void SnoozeToggle_Clicked(object sender, EventArgs e)
-        {
-            var btn = ((ImageButton)sender);
-
-            if (alarm.SnoozeStatus)
-            {
-                alarm.SnoozeStatus = false;
-                btn.Source = "toggle_off.png";
-                btn.WidthRequest = 120;
-                btn.HeightRequest = 120;
-            }
-            else
-            {
-                alarm.SnoozeStatus = true;
                 btn.Source = "toggle_on.png";
                 btn.WidthRequest = 120;
                 btn.HeightRequest = 120;

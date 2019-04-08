@@ -19,10 +19,7 @@ namespace NFCAlarm
         public string SoundUri { get; set; }
         public string SoundName { get; set; }
         public bool Vibrate { get; set; }
-        public string VibrationName { get; set; }
-        public bool SnoozeStatus { get; set; }
-        public int SnoozeTime { get; set; }
-        public int SnoozeTimes { get; set; }
+        //public string VibrationName { get; set; }
         public bool Status { get; set; }
 
         private string toggleOn = "toggle_on.png";
@@ -62,10 +59,7 @@ namespace NFCAlarm
             SoundStatus = false;
             SoundName = "";
             Vibrate = false;
-            VibrationName = "Basic Call";
-            SnoozeStatus = false;
-            SnoozeTime = 5;
-            SnoozeTimes = 0;
+            //VibrationName = "Basic Call";
             Status = false;          
         }
 
@@ -100,25 +94,9 @@ namespace NFCAlarm
         }
 
         [JsonIgnore]
-        public string SnoozeImageName
-        {
-            get
-            {
-                if (SnoozeStatus) return toggleOn;
-                else return toggleOff;
-            }
-        }
-
-        [JsonIgnore]
         public string Time
         {
             get { return Hour.ToString() + ":" + Minute.ToString(); }
-        }
-
-        [JsonIgnore]
-        public string SnoozeName
-        {
-            get { return SnoozeTime.ToString() + " Minutes, " + SnoozeTimes.ToString() + " Times"; }
         }
 
         [JsonIgnore]
@@ -151,18 +129,6 @@ namespace NFCAlarm
             }
         }
 
-        [JsonIgnore]
-        public string SnoozeToggleName
-        {
-            get
-            {
-                if (SnoozeStatus)                
-                    return "On";                
-                else
-                    return "Off";
-            }
-        }
-
         public void Toggle()
         {
             if (Status) Status = false;
@@ -179,12 +145,6 @@ namespace NFCAlarm
         {
             if (SoundStatus) SoundStatus = false;
             else SoundStatus = true;
-        }
-
-        public void ToggleSnooze()
-        {
-            if (SnoozeStatus) SnoozeStatus = false;
-            else SnoozeStatus = true;
         }
     }
 }

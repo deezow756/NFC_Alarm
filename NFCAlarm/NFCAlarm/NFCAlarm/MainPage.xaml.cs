@@ -114,6 +114,18 @@ namespace NFCAlarm
                 if (alarms[i].ClassID == btn.ClassId)
                 {
                     alarms[i].Toggle();
+                    if(alarms[i].Status)
+                    {
+                        XAlarmManager alarmManager = new XAlarmManager();
+                        alarmManager.SetAlarm(alarms[i].ID, int.Parse(alarms[i].Minute), int.Parse(alarms[i].Hour), alarms[i].Day, alarms[i].Month, alarms[i].Year);
+                    }
+                    else
+                    {
+                        XAlarmManager alarmManager = new XAlarmManager();
+                        alarmManager.CancelAlarm(alarms[i].ID);
+                    }
+                    FileManager fileManager = new FileManager();
+                    fileManager.SaveAlarm(alarms[i]);
                     btn.Source = alarms[i].ImageName;
                     btn.HeightRequest = 120;
                     btn.WidthRequest = 120;
