@@ -23,9 +23,10 @@ void loop()
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Scan Your Phone");
+    Serial.print("Receive Message");
     int msgSize = nfc.read(ndefBuf, sizeof(ndefBuf));
     if (msgSize > 0) {
-                   
+        Serial.print("Success");
         NdefMessage msg  = NdefMessage(ndefBuf, msgSize);
 
         NdefRecord record = msg.getRecord(0);
@@ -82,15 +83,18 @@ void loop()
         lcd.clear();
         lcd.print("Enter Code:");
         lcd.setCursor(0,1);
-        lcd.print(code);    
+        lcd.print(code);   
+
+        Serial.print(code);
         SendMessage();
-        delay(5000);        
+        delay(15000);        
     }
     delay(1000);
 }
 
 void SendMessage()
 {
+        Serial.print("Send Message");
         NdefMessage message = NdefMessage();
         message.addMimeMediaRecord("www.deezow.com", "true");
             
@@ -100,4 +104,9 @@ void SendMessage()
         if (0 >= nfc.write(ndefBuf, messageSize)) {
             SendMessage();            
         }
+        else
+        {
+            Serial.print("Success");
+        }
+        
 }

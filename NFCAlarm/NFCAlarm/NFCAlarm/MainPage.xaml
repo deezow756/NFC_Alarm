@@ -13,7 +13,7 @@
                     <DataTemplate>
                         <ViewCell Tapped="ImageCell_Tapped" ClassId="{Binding ClassID}">
                             <StackLayout Orientation="Horizontal">
-                                <ImageButton Source="delete.png" BackgroundColor="Transparent" Clicked="ImageButton_ClickedDelete" ClassId="{Binding ClassID}" HeightRequest="120" WidthRequest="120" MinimumWidthRequest="120" MinimumHeightRequest="120" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
+                                <ImageButton Source="delete.png" BackgroundColor="Transparent" Clicked="ImageButton_ClickedDelete" ClassId="{Binding ClassID}" HeightRequest="60" WidthRequest="60" MinimumWidthRequest="60" MinimumHeightRequest="60" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
                                 <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
                                     <Label Text="{Binding Name}" FontSize="30" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
                                     <Label Text="{Binding Time}" FontSize="25" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>

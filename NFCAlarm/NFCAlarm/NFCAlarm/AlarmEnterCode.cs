@@ -27,11 +27,12 @@ namespace NFCAlarm
         {
             entry = new Entry();
             entry.Placeholder = "Enter Code Here";
+            entry.FontSize = 30;
 
             button = new Button();
             button.Text = "Press Me";
             button.Clicked += Button_Clicked;
-
+            
             stackLayout.Children.Add(entry);
             stackLayout.Children.Add(button);
         }

@@ -788,7 +788,7 @@
   },
   "libraries": {
     "NdefLibrary/3.0.2": {
-      "sha512": "2vq3NC5iylYGjr20OPAJu1Wkid32gjd01wAQNIwjjnD4sUCc0NHIzhLhDSwJ+sF4LzTic8/kP6eGohB+OQwUvA==",
+      "sha512": "bQo/pmqqgoirrvbykTsbWPYdex8n0YzlpMvlO03VqOrfps8befpPR+C5fjQo6MM6+cjEi7M8aKX+z6+O0aOcXQ==",
       "type": "package",
       "path": "ndeflibrary/3.0.2",
       "files": [
@@ -800,7 +800,7 @@
       ]
     },
     "Newtonsoft.Json/12.0.1": {
-      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
+      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
       "type": "package",
       "path": "newtonsoft.json/12.0.1",
       "files": [
@@ -839,7 +839,7 @@
       ]
     },
     "NFCForms/2.3.2": {
-      "sha512": "8oyZ7/1de8fdrc/uUNU44LE5pnOTOoeXy2NVInw4fIwZplP2x6ilM1kWBCz2vlY8bUMuZ+8z/VZ3cZCqWy4N0g==",
+      "sha512": "fntxuhsw9XV9TL3utg2QbKFZnGEjupAAKvr1st5tHBz3zznccOsNtHwqEirzveILcqPhRBSbfXqJhal9C9JndQ==",
       "type": "package",
       "path": "nfcforms/2.3.2",
       "files": [
@@ -860,7 +860,7 @@
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
-      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "sha512": "nATsBTD2CKr4AYN6eRszhX4sptImWmBJwB/U6XKCWWfnCcrTBw8XSCm3QA9gjppkHTr8OkXUY21MR91D3QZXsw==",
       "type": "package",
       "path": "system.numerics.vectors/4.5.0",
       "files": [
@@ -907,7 +907,7 @@
       ]
     },
     "Xamarin.Essentials/1.1.0": {
-      "sha512": "W0XOt1dNMAE2POcsVotoKDDy5FdAOnR0qULKl6WI4kQEMxQ1sp84DsSU5iacV7oQUMuPhUBAm/3ywks0HO1QrQ==",
+      "sha512": "AGismQb55pszEQ/ZIv9O1U2YyaF2gHdBdAUO79+biHf1s7AL2R++DIvmf7Z+wtfhZrB9wxhXAkOUuYHgpY6oTw==",
       "type": "package",
       "path": "xamarin.essentials/1.1.0",
       "files": [
@@ -950,7 +950,7 @@
       ]
     },
     "Xamarin.Forms/4.0.0.232914-pre6": {
-      "sha512": "d6CrhlX+p0RQRRE83nVkbp9oYZBN8hpLxjkIEBZC12OB+yheQBjdcFq778erllJecBPbnX/+ajO53eiNsgCFPg==",
+      "sha512": "IehBiIKvFMFl5MHUjZmleBn6zLSR+D65cL3n/UDZWf4BiPWqIHBijN9JAFI/htfUZKDMGqjqZTzXsg1SOw7xYQ==",
       "type": "package",
       "path": "xamarin.forms/4.0.0.232914-pre6",
       "files": [
@@ -1127,20 +1127,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dorre\\.nuget\\packages\\": {}
+    "C:\\Users\\40340713\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
       "projectName": "NFCAlarm.iOS",
-      "projectPath": "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
-      "packagesPath": "C:\\Users\\dorre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\obj\\",
+      "projectPath": "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\NFCAlarm.iOS.csproj",
+      "packagesPath": "C:\\Users\\40340713\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\dorre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\40340713\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1153,8 +1153,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj": {
-              "projectPath": "C:\\Users\\dorre\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj"
+            "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj": {
+              "projectPath": "C:\\Users\\40340713\\Documents\\GitHub\\NFC_Alarm\\NFCAlarm\\NFCAlarm\\NFCAlarm\\NFCAlarm.csproj"
             }
           }
         }

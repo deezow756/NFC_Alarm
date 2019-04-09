@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NFCAlarm.SetUpAlarm">
+             x:Class="NFCAlarm.SetUpAlarm"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
             <TimePicker x:Name="pickerTime" Format="t" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Scale="1.5" PropertyChanged="PickerTime_PropertyChanged"/>
@@ -19,7 +20,7 @@
             <ListView x:Name="listAlarmVibrate" RowHeight="100" HasUnevenRows="False" HorizontalOptions="CenterAndExpand" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell ClassId="{Binding ClassID}" x:Name="vibrateTrigger">
+                        <ViewCell ClassId="{Binding ClassID}" x:Name="vibrateTrigger" Tapped="VibrateTrigger_Tapped">
                             <StackLayout Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
                                     <Label Text="Vibrate" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>

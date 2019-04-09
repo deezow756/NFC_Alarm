@@ -25,12 +25,6 @@ namespace NFCAlarm
             SetupLists();
 		}
 
-        protected override bool OnBackButtonPressed()
-        {
-            StopSound(currentSound.Name);
-            return base.OnBackButtonPressed();            
-        }
-
         private void SetupLists()
         {
             List<Alarm> alarms = new List<Alarm>();
@@ -69,12 +63,13 @@ namespace NFCAlarm
         {
             if (setup.alarm.SoundStatus)
             {
-                ringtones.StopRingtone(currentSound.Name);
+                if(currentSound != null)
+                    ringtones.StopRingtone(currentSound.Name);
+
                 setup.alarm.SoundStatus = false;
                 List<Alarm> alarms = new List<Alarm>();
                 alarms.Add(setup.alarm);
                 listSoundToggle.ItemsSource = alarms;
-                listSound.IsEnabled = false;
             }
             else
             {
@@ -82,7 +77,6 @@ namespace NFCAlarm
                 List<Alarm> alarms = new List<Alarm>();
                 alarms.Add(setup.alarm);
                 listSoundToggle.ItemsSource = alarms;
-                listSound.IsEnabled = true;
             }
         }
 

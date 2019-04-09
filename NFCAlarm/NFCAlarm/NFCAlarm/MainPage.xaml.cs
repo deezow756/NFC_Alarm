@@ -37,6 +37,7 @@ namespace NFCAlarm
             {
                 alarmsTextList.ItemsSource = null;
                 alarmsTextList.ItemsSource = alarms.ToList();
+                txtError.Text = "";
             }
             else
             {

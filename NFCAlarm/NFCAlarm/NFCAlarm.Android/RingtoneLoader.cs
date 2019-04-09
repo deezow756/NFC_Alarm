@@ -40,6 +40,7 @@ namespace NFCAlarm.Droid
             Android.Net.Uri _uri = Android.Net.Uri.Parse(uri);
 
             AudioManager audioManager = (AudioManager)context.GetSystemService(Context.AudioService);
+            audioManager.SetStreamVolume(Stream.Alarm, audioManager.GetStreamMaxVolume(Stream.Alarm), 0);
 
             if (ringtone != null)
             {
@@ -50,7 +51,7 @@ namespace NFCAlarm.Droid
             }
 
             ringtone = ringtoneManager.GetRingtone(ringtoneManager.GetRingtonePosition(_uri));
-
+            
             ringtone.StreamType = Stream.Alarm;
 
             ringtone.Play();
@@ -58,7 +59,7 @@ namespace NFCAlarm.Droid
 
         public void StopRintone(string name)
         {
-            if(ringtone.GetTitle(context) == name)
+            if(ringtone.GetTitle(context) == name && name != null)
             {
                 if(ringtone.IsPlaying)
                 {

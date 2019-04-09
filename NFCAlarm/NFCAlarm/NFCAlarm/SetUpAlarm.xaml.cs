@@ -95,8 +95,8 @@ namespace NFCAlarm
 
         protected override void OnDisappearing()
         {
-            base.OnDisappearing();
             Save();
+            base.OnDisappearing();            
         }
 
         protected override bool OnBackButtonPressed()
@@ -250,6 +250,11 @@ namespace NFCAlarm
                 }
             }
             propChange = true;
+        }
+
+        private void VibrateTrigger_Tapped(object sender, EventArgs e)
+        {
+            listAlarmVibrate.SelectedItem = null;
         }
     }
 }
